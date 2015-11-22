@@ -9,43 +9,62 @@
 import UIKit
 
 class VenuesTableViewController: UITableViewController {
+    
+    var venues: [Venue] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.loadVenues()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Load Venues
+    func loadVenues() {
+        let venues = VenuesService()
+        
+        // Get venues
+        venues.getVenues { retrievedVenues in
+            if let venues = retrievedVenues {
+                
+                // Go back to main process
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.venues = venues.allVenues
+                    self.tableView.reloadData()
+                }
+                
+            } else {
+                print("Fetch failed")
+            }
+            
+        }
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return venues.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath)
+        let venue = self.venues[indexPath.row]
 
         // Configure the cell...
-
+        cell.textLabel!.text = venue.name
+        cell.detailTextLabel!.text = venue.address
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

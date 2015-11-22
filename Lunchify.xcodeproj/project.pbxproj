@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990A7DD41C01C3B500BEBAA4 /* VenuesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD31C01C3B500BEBAA4 /* VenuesService.swift */; };
+		990A7DD61C01C46300BEBAA4 /* Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD51C01C46300BEBAA4 /* Venues.swift */; };
+		990A7DD81C01C73800BEBAA4 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD71C01C73800BEBAA4 /* Error.swift */; };
+		990A7DDA1C01C9C600BEBAA4 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD91C01C9C600BEBAA4 /* Venue.swift */; };
 		99827ACE1C012933001D10EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827ACD1C012933001D10EF /* AppDelegate.swift */; };
 		99827AD01C012933001D10EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827ACF1C012933001D10EF /* ViewController.swift */; };
 		99827AD31C012933001D10EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99827AD11C012933001D10EF /* Main.storyboard */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		990A7DD31C01C3B500BEBAA4 /* VenuesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesService.swift; sourceTree = "<group>"; };
+		990A7DD51C01C46300BEBAA4 /* Venues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venues.swift; sourceTree = "<group>"; };
+		990A7DD71C01C73800BEBAA4 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		990A7DD91C01C9C600BEBAA4 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		99827ACA1C012933001D10EF /* Lunchify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lunchify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99827ACD1C012933001D10EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99827ACF1C012933001D10EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		990A7DDB1C01CA6700BEBAA4 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				990A7DD51C01C46300BEBAA4 /* Venues.swift */,
+			);
+			name = Collections;
+			sourceTree = "<group>";
+		};
 		99827AC11C012933001D10EF = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +125,7 @@
 		99827ACC1C012933001D10EF /* Lunchify */ = {
 			isa = PBXGroup;
 			children = (
+				990A7DDB1C01CA6700BEBAA4 /* Collections */,
 				99827AFE1C012ACC001D10EF /* Helpers */,
 				99827AFD1C012AC7001D10EF /* Models */,
 				99827AFC1C012ABB001D10EF /* Controllers */,
@@ -158,6 +175,9 @@
 		99827AFD1C012AC7001D10EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				990A7DD31C01C3B500BEBAA4 /* VenuesService.swift */,
+				990A7DD91C01C9C600BEBAA4 /* Venue.swift */,
+				990A7DD71C01C73800BEBAA4 /* Error.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -323,8 +343,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				99827B051C012EB8001D10EF /* NetworkOperation.swift in Sources */,
+				990A7DDA1C01C9C600BEBAA4 /* Venue.swift in Sources */,
+				990A7DD61C01C46300BEBAA4 /* Venues.swift in Sources */,
+				990A7DD41C01C3B500BEBAA4 /* VenuesService.swift in Sources */,
 				99827AD01C012933001D10EF /* ViewController.swift in Sources */,
 				99827ACE1C012933001D10EF /* AppDelegate.swift in Sources */,
+				990A7DD81C01C73800BEBAA4 /* Error.swift in Sources */,
 				99827B001C012B1B001D10EF /* VenuesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +584,7 @@
 				99827AF41C012933001D10EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99827AF51C012933001D10EF /* Build configuration list for PBXNativeTarget "LunchifyTests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +593,7 @@
 				99827AF71C012933001D10EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99827AF81C012933001D10EF /* Build configuration list for PBXNativeTarget "LunchifyUITests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +602,7 @@
 				99827AFA1C012933001D10EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

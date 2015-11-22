@@ -8,32 +8,25 @@
 
 import Foundation
 import SwiftyJSON
+import Alamofire
 
 class NetworkOperation {
     
-    lazy var config: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-    lazy var session: NSURLSession = NSURLSession(configuration: self.config)
-    let queryURL: NSURL
-    
     typealias JSONDictionaryCompletion = (JSON?) -> Void
     
-    init(url: NSURL) {
-        self.queryURL = url
-    }
-    
-    func downloadJSONFromURL(completion: JSONDictionaryCompletion) {
-        let requrst: NSURLRequest = NSURLRequest(URL: queryURL)
-        let dataTask = session.dataTaskWithRequest(requrst) { (let data, let response, let error) in
-            if let httpResponse = response as? NSHTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    let jsonDictionary = JSON(data: data!)
-                    completion(jsonDictionary)
+    func downloadJSONFromURL(url: String, completion: JSONDictionaryCompletion) {
+        // Do a get request
+        Alamofire.request(.GET, url).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    completion(json)
                 }
-            } else {
-                print("Error! HTTP Response is not valid.")
+            case .Failure(let error):
+                print(error)
             }
         }
-        dataTask.resume()
     }
     
 }
