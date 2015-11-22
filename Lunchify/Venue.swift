@@ -8,15 +8,50 @@
 
 import Foundation
 import SwiftyJSON
+import CoreLocation
+import MapKit
 
 struct Venue {
     
+    // Venue properties
+    var id: String?
     var name: String?
+    var simpleName: String?
     var address: String?
+    var latitude: Double?
+    var longitude: Double?
+    var location: CLLocation?
+    
+    // Helpers
+    let distanceFormatter = MKDistanceFormatter()
     
     init(venue: JSON) {
+        id = venue["id"].string
         name = venue["name"].string
         address = venue["address"].string
+        latitude = venue["location"][0].double
+        longitude = venue["location"][1].double
+        simpleName = venue["simple_name"].string
+        
+        // Make a CoreLocation object 
+        if let lat = latitude, let long = longitude {
+            location = CLLocation(latitude: lat, longitude: long)
+        }
+        
+        // Distance Config
+        distanceFormatter.units = .Metric
+        distanceFormatter.unitStyle = .Abbreviated
+    }
+    
+    func distanceFromLocation(location: CLLocation) -> String? {
+        var distanceString: String?
+        
+        if let venueLocation = self.location {
+            let distance = location.distanceFromLocation(venueLocation)
+            distanceString = distanceFormatter.stringFromDistance(distance)
+        }
+        
+        return distanceString
     }
     
 }

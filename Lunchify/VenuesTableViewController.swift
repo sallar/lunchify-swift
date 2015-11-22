@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import CoreLocation
 
 class VenuesTableViewController: UITableViewController {
     
     var venues: [Venue] = []
+    var location: CLLocation = CLLocation(latitude: 24.8306999206543, longitude: 60.176399230957)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureView()
         self.loadVenues()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func configureView() {
+        tableView.rowHeight = 64
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     // MARK: - Load Venues
@@ -55,12 +61,13 @@ class VenuesTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as! VenueTableViewCell
         let venue = self.venues[indexPath.row]
 
         // Configure the cell...
-        cell.textLabel!.text = venue.name
-        cell.detailTextLabel!.text = venue.address
+        cell.venueTitleLabel?.text = venue.name
+        cell.venueAddressLabel?.text = venue.address
+        cell.venueDistanceLabel?.text = venue.distanceFromLocation(location)
         
         return cell
     }

@@ -14,7 +14,7 @@ struct VenuesService {
     let network: NetworkOperation = NetworkOperation()
     
     func getVenues(completion: (Venues? -> Void)) {
-        network.downloadJSONFromURL("\(apiBaseURL)venues") { response in
+        network.downloadJSONFromURL("\(apiBaseURL)venues/60.176399230957,24.8306999206543") { response in
             var venues: Venues?
             
             if let json = response {

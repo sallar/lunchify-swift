@@ -22,6 +22,7 @@
 		99827B021C012DC0001D10EF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99827B011C012DC0001D10EF /* SwiftyJSON.framework */; };
 		99827B051C012EB8001D10EF /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827B041C012EB8001D10EF /* NetworkOperation.swift */; };
 		99827B071C012FEE001D10EF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99827B061C012FEE001D10EF /* Alamofire.framework */; };
+		99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		99827B011C012DC0001D10EF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		99827B041C012EB8001D10EF /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		99827B061C012FEE001D10EF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				99827AD11C012933001D10EF /* Main.storyboard */,
 				99827AD61C012933001D10EF /* LaunchScreen.storyboard */,
+				99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -175,7 +178,6 @@
 		99827AFD1C012AC7001D10EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				990A7DD31C01C3B500BEBAA4 /* VenuesService.swift */,
 				990A7DD91C01C9C600BEBAA4 /* Venue.swift */,
 				990A7DD71C01C73800BEBAA4 /* Error.swift */,
 			);
@@ -187,6 +189,7 @@
 			children = (
 				99827ACD1C012933001D10EF /* AppDelegate.swift */,
 				99827B041C012EB8001D10EF /* NetworkOperation.swift */,
+				990A7DD31C01C3B500BEBAA4 /* VenuesService.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				99827B051C012EB8001D10EF /* NetworkOperation.swift in Sources */,
 				990A7DDA1C01C9C600BEBAA4 /* Venue.swift in Sources */,
 				990A7DD61C01C46300BEBAA4 /* Venues.swift in Sources */,
+				99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */,
 				990A7DD41C01C3B500BEBAA4 /* VenuesService.swift in Sources */,
 				99827AD01C012933001D10EF /* ViewController.swift in Sources */,
 				99827ACE1C012933001D10EF /* AppDelegate.swift in Sources */,
