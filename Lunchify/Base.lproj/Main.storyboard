@@ -23,22 +23,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Venue Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3S-oP-SOh">
-                                            <rect key="frame" x="15" y="12" width="94" height="23"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3S-oP-SOh">
+                                            <rect key="frame" x="15" y="12" width="90.5" height="21.5"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJN-oK-n4h">
-                                            <rect key="frame" x="15" y="37" width="85" height="15"/>
+                                            <rect key="frame" x="15" y="37" width="84.5" height="14.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUt-x3-4aa">
-                                            <rect key="frame" x="533" y="37" width="49" height="15"/>
+                                            <rect key="frame" x="536" y="37" width="49" height="14.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,11 +51,12 @@
                                         <constraint firstItem="I3S-oP-SOh" firstAttribute="top" secondItem="sdK-79-etl" secondAttribute="topMargin" constant="4" id="Bvm-sV-PSP"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="pJN-oK-n4h" secondAttribute="leading" id="Dhp-Kz-W0h"/>
                                         <constraint firstItem="pJN-oK-n4h" firstAttribute="top" secondItem="I3S-oP-SOh" secondAttribute="bottom" constant="2" id="FD4-h8-0io"/>
+                                        <constraint firstItem="pJN-oK-n4h" firstAttribute="top" secondItem="sdK-79-etl" secondAttribute="topMargin" constant="29" id="JRm-M6-mvh"/>
                                         <constraint firstItem="I3S-oP-SOh" firstAttribute="leading" secondItem="sdK-79-etl" secondAttribute="leadingMargin" constant="7" id="LDU-6d-h6z"/>
                                         <constraint firstItem="pJN-oK-n4h" firstAttribute="top" secondItem="I3S-oP-SOh" secondAttribute="bottom" constant="2" id="NvY-Pc-yle"/>
                                         <constraint firstItem="hUt-x3-4aa" firstAttribute="top" secondItem="sdK-79-etl" secondAttribute="topMargin" constant="29" id="Qlc-aU-Cnb"/>
                                         <constraint firstItem="pJN-oK-n4h" firstAttribute="leading" secondItem="sdK-79-etl" secondAttribute="leadingMargin" constant="7" id="VMW-Il-m5t"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="hUt-x3-4aa" secondAttribute="trailing" constant="10" id="cIR-TI-ieq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hUt-x3-4aa" secondAttribute="trailing" constant="7" id="cIR-TI-ieq"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="I3S-oP-SOh" secondAttribute="leading" id="ooh-k3-bsG"/>
                                     </constraints>
                                     <variation key="default">
@@ -63,6 +64,7 @@
                                             <exclude reference="1Ge-fa-Lch"/>
                                             <exclude reference="ooh-k3-bsG"/>
                                             <exclude reference="Dhp-Kz-W0h"/>
+                                            <exclude reference="FD4-h8-0io"/>
                                             <exclude reference="NvY-Pc-yle"/>
                                         </mask>
                                     </variation>
@@ -115,6 +117,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.86396080255508423" green="0.25933554768562317" blue="0.3134533166885376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
