@@ -12,7 +12,7 @@ import CoreLocation
 class VenuesTableViewController: UITableViewController {
     
     var venues: [Venue] = []
-    var location: CLLocation = CLLocation(latitude: 24.8306999206543, longitude: 60.176399230957)
+    var location: CLLocation = CLLocation(latitude: 60.176399230957, longitude: 24.8306999206543)
 
     override func viewDidLoad() {
         super.viewDidLoad()

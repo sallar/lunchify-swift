@@ -126,7 +126,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="Hyh-1n-0YM">
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="clY-fD-Wq3">
+                        <barButtonItem key="rightBarButtonItem" image="compass-1" id="clY-fD-Wq3">
                             <connections>
                                 <segue destination="ICI-i4-unq" kind="show" identifier="ShowMap" id="hZr-sm-wyj"/>
                             </connections>
@@ -212,4 +212,7 @@
             <point key="canvasLocation" x="-194" y="372"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass-1" width="30" height="30"/>
+    </resources>
 </document>
