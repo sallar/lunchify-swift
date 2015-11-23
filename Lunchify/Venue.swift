@@ -14,7 +14,7 @@ import MapKit
 struct Venue {
     
     // Venue properties
-    var id: String?
+    let id: String
     var name: String?
     var simpleName: String?
     var address: String?
@@ -26,7 +26,7 @@ struct Venue {
     let distanceFormatter = MKDistanceFormatter()
     
     init(venue: JSON) {
-        id = venue["id"].string
+        id = venue["_id"].string!
         name = venue["name"].string
         address = venue["address"].string
         latitude = venue["location"][0].double

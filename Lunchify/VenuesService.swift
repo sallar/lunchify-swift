@@ -27,4 +27,20 @@ struct VenuesService {
         }
     }
     
+    func getMenu(venue: Venue, completion: (Menu? -> Void)) {
+        let url = "\(apiBaseURL)venues/\(venue.id)/2015-11-23"
+        
+        network.downloadJSONFromURL(url) { response in
+            var menu: Menu?
+
+            if let json = response {
+                menu = Menu(meals: json["meals"].arrayValue)
+            } else {
+                print("Loading menu failed")
+            }
+            
+            completion(menu)
+        }
+    }
+    
 }
