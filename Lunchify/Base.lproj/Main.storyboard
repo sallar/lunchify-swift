@@ -126,7 +126,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="Hyh-1n-0YM">
-                        <barButtonItem key="rightBarButtonItem" image="compass-1" id="clY-fD-Wq3">
+                        <barButtonItem key="rightBarButtonItem" image="compass" id="clY-fD-Wq3">
                             <connections>
                                 <segue destination="ICI-i4-unq" kind="show" identifier="ShowMap" id="hZr-sm-wyj"/>
                             </connections>
@@ -156,17 +156,46 @@
                                     <outlet property="delegate" destination="ICI-i4-unq" id="A4H-Y1-c7V"/>
                                 </connections>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzh-rl-yMS">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem image="direction" id="PnU-Vm-gcR">
+                                        <connections>
+                                            <action selector="toggleFollow:" destination="ICI-i4-unq" id="hIp-9o-JXF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2a-ib-Lke">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <animations/>
+                                <items/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVE-8u-OC8">
+                                <rect key="frame" x="20" y="75" width="560" height="20"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GG8-yw-KK5" firstAttribute="leading" secondItem="7pH-qP-UtX" secondAttribute="leading" id="1ku-f3-9Fy"/>
+                            <constraint firstAttribute="trailing" secondItem="r2a-ib-Lke" secondAttribute="trailing" id="243-GV-uBX"/>
                             <constraint firstItem="GG8-yw-KK5" firstAttribute="top" secondItem="uTh-44-HXI" secondAttribute="bottom" id="7hA-ev-voY"/>
+                            <constraint firstItem="r2a-ib-Lke" firstAttribute="top" secondItem="uTh-44-HXI" secondAttribute="bottom" id="8GX-5k-vlM"/>
                             <constraint firstAttribute="trailing" secondItem="GG8-yw-KK5" secondAttribute="trailing" id="IUK-3I-ekR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GG8-yw-KK5" secondAttribute="trailing" id="LlE-aC-oWe"/>
+                            <constraint firstItem="r2a-ib-Lke" firstAttribute="leading" secondItem="7pH-qP-UtX" secondAttribute="leading" id="RPi-z5-YU9"/>
                             <constraint firstAttribute="trailing" secondItem="GG8-yw-KK5" secondAttribute="trailing" id="Xpd-3Q-XuN"/>
                             <constraint firstItem="HfM-Xy-9Ve" firstAttribute="top" secondItem="GG8-yw-KK5" secondAttribute="bottom" id="Z9N-gp-pNQ"/>
+                            <constraint firstAttribute="trailing" secondItem="pzh-rl-yMS" secondAttribute="trailing" id="aka-TG-mui"/>
                             <constraint firstItem="GG8-yw-KK5" firstAttribute="leading" secondItem="7pH-qP-UtX" secondAttribute="leadingMargin" id="gac-3F-mwO"/>
+                            <constraint firstItem="pzh-rl-yMS" firstAttribute="leading" secondItem="7pH-qP-UtX" secondAttribute="leading" id="m11-fv-a34"/>
+                            <constraint firstItem="HfM-Xy-9Ve" firstAttribute="top" secondItem="pzh-rl-yMS" secondAttribute="bottom" id="pwb-ua-b6j"/>
                             <constraint firstItem="GG8-yw-KK5" firstAttribute="leading" secondItem="7pH-qP-UtX" secondAttribute="leading" id="ssV-NJ-Q5N"/>
                             <constraint firstItem="GG8-yw-KK5" firstAttribute="top" secondItem="uTh-44-HXI" secondAttribute="bottom" id="ujd-hj-rTG"/>
                             <constraint firstItem="HfM-Xy-9Ve" firstAttribute="top" secondItem="GG8-yw-KK5" secondAttribute="bottom" id="yoG-Oh-gaf"/>
@@ -183,6 +212,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="BVE-8u-OC8" id="D44-Jk-8dh"/>
+                        <outlet property="followUserButton" destination="PnU-Vm-gcR" id="Mm5-Ps-eiN"/>
                         <outlet property="mapView" destination="GG8-yw-KK5" id="WvB-DB-KSE"/>
                     </connections>
                 </viewController>
@@ -213,6 +244,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="compass-1" width="30" height="30"/>
+        <image name="compass" width="24" height="24"/>
+        <image name="direction" width="24" height="24"/>
     </resources>
 </document>

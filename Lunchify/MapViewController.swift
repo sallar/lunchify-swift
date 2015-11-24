@@ -11,10 +11,14 @@ import MapKit
 
 class MapViewController: UIViewController {
 
+    @IBOutlet weak var followUserButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var addressLabel: UILabel!
     
     var pointAnnotation: MKPointAnnotation!
     var pinAnnotationView: MKPinAnnotationView!
+    var followsUserLocation: Bool = false
+    var userLocation: MKUserLocation?
     
     var venue: Venue? {
         didSet {
@@ -31,7 +35,8 @@ class MapViewController: UIViewController {
     
     func configureView() {
         if let venue = self.venue, let mapView = self.mapView {
-            //mapView.centerCoordinate = venue.location!.coordinate
+            // Set address
+            addressLabel.text = venue.address
             
             // Zoom in to venue
             let region = MKCoordinateRegionMakeWithDistance(
@@ -65,7 +70,6 @@ class MapViewController: UIViewController {
                 } else {
                     self.showRoute(response!)
                 }
-                
             }
         }
     }
@@ -83,12 +87,36 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func showUserLocation() {
+        if let location = userLocation {
+            var region = MKCoordinateRegionMakeWithDistance(location.location!.coordinate, 300, 300)
+            region.center = location.location!.coordinate
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    
+    @IBAction func toggleFollow(sender: UIBarButtonItem) {
+        followsUserLocation = !followsUserLocation
+        if (followsUserLocation) {
+            showUserLocation()
+            followUserButton.image = UIImage(named: "direction-filled")
+        } else {
+            followUserButton.image = UIImage(named: "direction")
+        }
+    }
+    
 
 }
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        //mapView.centerCoordinate = userLocation.location!.coordinate
+        print(userLocation)
+        self.userLocation = userLocation
+        
+        if (followsUserLocation) {
+            mapView.centerCoordinate = userLocation.location!.coordinate
+        }
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
