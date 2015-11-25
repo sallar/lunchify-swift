@@ -28,6 +28,8 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
 
     func configureView() {
         tableView.rowHeight = 64
+        let image = UIImage(named: "logo")
+        self.navigationItem.titleView = UIImageView(image: image)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -98,6 +100,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     }
     
     // MARK: - Location
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if self.location == nil {
             self.location = locations.first
