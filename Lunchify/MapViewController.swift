@@ -13,7 +13,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var followUserButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var addressLabel: UIBarButtonItem!
     
     var pointAnnotation: MKPointAnnotation!
     var pinAnnotationView: MKPinAnnotationView!
@@ -36,7 +36,13 @@ class MapViewController: UIViewController {
     func configureView() {
         if let venue = self.venue, let mapView = self.mapView {
             // Set address
-            addressLabel.text = venue.address
+            let labelFont = UIFont.systemFontOfSize(16.0, weight: UIFontWeightLight)
+            let labelAttrDict: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.blackColor(),
+                NSFontAttributeName: labelFont
+            ]
+            addressLabel.setTitleTextAttributes(labelAttrDict, forState: .Disabled)
+            addressLabel.title = venue.address
             
             // Zoom in to venue
             let region = MKCoordinateRegionMakeWithDistance(
@@ -75,9 +81,7 @@ class MapViewController: UIViewController {
     }
     
     func showRoute(response: MKDirectionsResponse) {
-        print(response.routes)
         for route in response.routes {
-            print(route.polyline)
             mapView.addOverlay(route.polyline, level: MKOverlayLevel.AboveRoads)
         }
     }
@@ -111,7 +115,6 @@ class MapViewController: UIViewController {
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        print(userLocation)
         self.userLocation = userLocation
         
         if (followsUserLocation) {
