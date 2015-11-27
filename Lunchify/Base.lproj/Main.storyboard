@@ -86,7 +86,7 @@
                     <navigationItem key="navigationItem" title="Lunchify" id="ceo-oX-gdQ">
                         <barButtonItem key="leftBarButtonItem" title="About" id="09C-m5-NZS">
                             <connections>
-                                <segue destination="Y93-eU-fmI" kind="presentation" id="oLz-9n-w5m"/>
+                                <segue destination="Y93-eU-fmI" kind="presentation" identifier="ShowAbout" modalPresentationStyle="overFullScreen" id="oLz-9n-w5m"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="482" y="372"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="ZT9-ts-NYw">
             <objects>
-                <viewController id="Y93-eU-fmI" sceneMemberID="viewController">
+                <viewController id="Y93-eU-fmI" customClass="AboutViewController" customModule="Lunchify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BjO-bb-Lkl"/>
                         <viewControllerLayoutGuide type="bottom" id="WP1-YO-mxU"/>
@@ -114,6 +114,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GS-Fc-cXP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eKB-Se-V8g">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05w-xh-UM3">
+                                            <rect key="frame" x="273" y="338" width="54" height="30"/>
+                                            <animations/>
+                                            <state key="normal" title="Dismiss">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="dismissView:" destination="Y93-eU-fmI" eventType="touchUpInside" id="1N8-uH-Ls1"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <animations/>
+                                </view>
+                                <animations/>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-pm-gps">
                                 <rect key="frame" x="277" y="289.5" width="46.5" height="20.5"/>
                                 <animations/>
@@ -123,10 +145,14 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5GS-Fc-cXP" firstAttribute="leading" secondItem="sJ8-zH-JVN" secondAttribute="leading" id="ae5-c8-J7J"/>
                             <constraint firstItem="Cbc-pm-gps" firstAttribute="centerY" secondItem="sJ8-zH-JVN" secondAttribute="centerY" id="dY6-bS-vz8"/>
                             <constraint firstItem="Cbc-pm-gps" firstAttribute="centerX" secondItem="sJ8-zH-JVN" secondAttribute="centerX" id="eid-tr-Qzv"/>
+                            <constraint firstAttribute="trailing" secondItem="5GS-Fc-cXP" secondAttribute="trailing" id="fiA-C5-rsQ"/>
+                            <constraint firstItem="WP1-YO-mxU" firstAttribute="top" secondItem="5GS-Fc-cXP" secondAttribute="bottom" id="gJQ-Ge-onH"/>
+                            <constraint firstItem="5GS-Fc-cXP" firstAttribute="top" secondItem="sJ8-zH-JVN" secondAttribute="top" id="u1D-ru-pqb"/>
                         </constraints>
                     </view>
                 </viewController>

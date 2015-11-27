@@ -11,6 +11,7 @@
 		990A7DD61C01C46300BEBAA4 /* Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD51C01C46300BEBAA4 /* Venues.swift */; };
 		990A7DD81C01C73800BEBAA4 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD71C01C73800BEBAA4 /* Error.swift */; };
 		990A7DDA1C01C9C600BEBAA4 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD91C01C9C600BEBAA4 /* Venue.swift */; };
+		990D2A9A1C09075A00757968 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990D2A991C09075A00757968 /* AboutViewController.swift */; };
 		994D86A91C038DD1008C1106 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994D86A81C038DD1008C1106 /* MenuTableViewController.swift */; };
 		994D86AB1C03A129008C1106 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994D86AA1C03A129008C1106 /* Menu.swift */; };
 		994D86AD1C03ABC1008C1106 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994D86AC1C03ABC1008C1106 /* MapViewController.swift */; };
@@ -49,6 +50,7 @@
 		990A7DD51C01C46300BEBAA4 /* Venues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venues.swift; sourceTree = "<group>"; };
 		990A7DD71C01C73800BEBAA4 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		990A7DD91C01C9C600BEBAA4 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		990D2A991C09075A00757968 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		994D86A81C038DD1008C1106 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		994D86AA1C03A129008C1106 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		994D86AC1C03ABC1008C1106 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				99827AFF1C012B1B001D10EF /* VenuesTableViewController.swift */,
 				994D86A81C038DD1008C1106 /* MenuTableViewController.swift */,
 				994D86AC1C03ABC1008C1106 /* MapViewController.swift */,
+				990D2A991C09075A00757968 /* AboutViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				994D86A91C038DD1008C1106 /* MenuTableViewController.swift in Sources */,
 				990A7DD61C01C46300BEBAA4 /* Venues.swift in Sources */,
 				994D86AB1C03A129008C1106 /* Menu.swift in Sources */,
+				990D2A9A1C09075A00757968 /* AboutViewController.swift in Sources */,
 				99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */,
 				990A7DD41C01C3B500BEBAA4 /* VenuesService.swift in Sources */,
 				99827ACE1C012933001D10EF /* AppDelegate.swift in Sources */,

@@ -96,6 +96,16 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
                 let controller = (segue.destinationViewController as! MenuTableViewController)
                 controller.venue = venue
             }
+        } else if segue.identifier == "ShowAbout" {
+            /*let controller = (segue.destinationViewController as! AboutViewController)
+            controller.view.backgroundColor = UIColor.clearColor()
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = view.bounds
+            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+            controller.view.addSubview(blurEffectView)*/
+            
+            //self.modalPresentationStyle = .OverCurrentContext
         }
     }
     
