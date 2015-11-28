@@ -8,12 +8,14 @@
 
 import UIKit
 import CoreLocation
+import JGProgressHUD
 
 class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate {
     
     var venues: [Venue] = []
     var location: CLLocation?
     let locationManager = CLLocationManager()
+    let HUD = JGProgressHUD(style: .Dark)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,10 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         tableView.rowHeight = 64
         let image = UIImage(named: "logo")
         self.navigationItem.titleView = UIImageView(image: image)
+        
+        // Progress
+        HUD.textLabel.text = "Loading..."
+        HUD.showInView(self.navigationController?.view)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -49,6 +55,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
                     self.venues = venues.allVenues
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
+                    self.HUD.dismiss()
                 }
                 
             } else {

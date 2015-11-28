@@ -26,6 +26,7 @@
 		99827B051C012EB8001D10EF /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827B041C012EB8001D10EF /* NetworkOperation.swift */; };
 		99827B071C012FEE001D10EF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99827B061C012FEE001D10EF /* Alamofire.framework */; };
 		99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */; };
+		99DA1A1B1C0A68DA006CDD66 /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		99827B041C012EB8001D10EF /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		99827B061C012FEE001D10EF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
+		99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DA1A1B1C0A68DA006CDD66 /* JGProgressHUD.framework in Frameworks */,
 				99827B071C012FEE001D10EF /* Alamofire.framework in Frameworks */,
 				99827B021C012DC0001D10EF /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -111,6 +114,7 @@
 		99827AC11C012933001D10EF = {
 			isa = PBXGroup;
 			children = (
+				99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */,
 				99827B061C012FEE001D10EF /* Alamofire.framework */,
 				99827B011C012DC0001D10EF /* SwiftyJSON.framework */,
 				99827ACC1C012933001D10EF /* Lunchify */,
@@ -340,6 +344,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/JGProgressHUD.framework",
 			);
 			outputPaths = (
 			);

@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var followUserButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UIBarButtonItem!
+    @IBOutlet weak var toolbar: UIToolbar!
     
     var pointAnnotation: MKPointAnnotation!
     var pinAnnotationView: MKPinAnnotationView!
@@ -35,6 +36,10 @@ class MapViewController: UIViewController {
     
     func configureView() {
         if let venue = self.venue, let mapView = self.mapView {
+            // Toolbar items
+            let bbi = MKUserTrackingBarButtonItem(mapView:self.mapView)
+            toolbar.items?.append(bbi)
+            
             // Set address
             let labelFont = UIFont.systemFontOfSize(16.0, weight: UIFontWeightLight)
             let labelAttrDict: [String: AnyObject]? = [
@@ -85,31 +90,13 @@ class MapViewController: UIViewController {
             mapView.addOverlay(route.polyline, level: MKOverlayLevel.AboveRoads)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    func showUserLocation() {
-        if let location = userLocation {
-            var region = MKCoordinateRegionMakeWithDistance(location.location!.coordinate, 300, 300)
-            region.center = location.location!.coordinate
+    @IBAction func showVenue(sender: AnyObject) {
+        if let venue = self.venue {
+            let region = MKCoordinateRegionMakeWithDistance(venue.location!.coordinate, 1000, 1000)
             mapView.setRegion(region, animated: true)
         }
     }
-    
-    
-    @IBAction func toggleFollow(sender: UIBarButtonItem) {
-        followsUserLocation = !followsUserLocation
-        if (followsUserLocation) {
-            showUserLocation()
-            followUserButton.image = UIImage(named: "direction-filled")
-        } else {
-            followUserButton.image = UIImage(named: "direction")
-        }
-    }
-    
 
 }
 

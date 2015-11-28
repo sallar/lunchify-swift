@@ -11,7 +11,7 @@ import CoreLocation
 
 struct VenuesService {
     
-    let apiBaseURL: String = "http://lunchify/api/"
+    let apiBaseURL: String = "http://lunchify.fi/api/"
     let network: NetworkOperation = NetworkOperation()
     
     func getVenues(location: CLLocation, completion: (Venues? -> Void)) {

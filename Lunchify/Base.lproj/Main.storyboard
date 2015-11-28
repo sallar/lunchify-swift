@@ -120,8 +120,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05w-xh-UM3">
-                                            <rect key="frame" x="273" y="338" width="54" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-pm-gps">
+                                            <rect key="frame" x="276" y="290.5" width="46.5" height="20.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05w-xh-UM3">
+                                            <rect key="frame" x="273" y="320" width="54" height="30"/>
                                             <animations/>
                                             <state key="normal" title="Dismiss">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,24 +139,21 @@
                                         </button>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="05w-xh-UM3" firstAttribute="centerY" secondItem="eKB-Se-V8g" secondAttribute="centerY" constant="35" id="0fK-Cb-uAc"/>
+                                        <constraint firstItem="05w-xh-UM3" firstAttribute="centerX" secondItem="eKB-Se-V8g" secondAttribute="centerX" id="1y3-1D-v8F"/>
+                                        <constraint firstItem="Cbc-pm-gps" firstAttribute="centerY" secondItem="eKB-Se-V8g" secondAttribute="centerY" id="2Qx-eN-ReE"/>
+                                        <constraint firstItem="Cbc-pm-gps" firstAttribute="centerX" secondItem="eKB-Se-V8g" secondAttribute="centerX" id="Up9-G6-aMY"/>
+                                    </constraints>
                                 </view>
                                 <animations/>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-pm-gps">
-                                <rect key="frame" x="277" y="289.5" width="46.5" height="20.5"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5GS-Fc-cXP" firstAttribute="leading" secondItem="sJ8-zH-JVN" secondAttribute="leading" id="ae5-c8-J7J"/>
-                            <constraint firstItem="Cbc-pm-gps" firstAttribute="centerY" secondItem="sJ8-zH-JVN" secondAttribute="centerY" id="dY6-bS-vz8"/>
-                            <constraint firstItem="Cbc-pm-gps" firstAttribute="centerX" secondItem="sJ8-zH-JVN" secondAttribute="centerX" id="eid-tr-Qzv"/>
                             <constraint firstAttribute="trailing" secondItem="5GS-Fc-cXP" secondAttribute="trailing" id="fiA-C5-rsQ"/>
                             <constraint firstItem="WP1-YO-mxU" firstAttribute="top" secondItem="5GS-Fc-cXP" secondAttribute="bottom" id="gJQ-Ge-onH"/>
                             <constraint firstItem="5GS-Fc-cXP" firstAttribute="top" secondItem="sJ8-zH-JVN" secondAttribute="top" id="u1D-ru-pqb"/>
@@ -231,15 +235,13 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <items>
-                                    <barButtonItem enabled="NO" title="Item" style="plain" id="DwH-WW-mgN">
+                                    <barButtonItem title="Item" style="plain" id="DwH-WW-mgN">
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sAG-1q-jCQ"/>
-                                    <barButtonItem image="direction" id="PnU-Vm-gcR">
                                         <connections>
-                                            <action selector="toggleFollow:" destination="ICI-i4-unq" id="hIp-9o-JXF"/>
+                                            <action selector="showVenue:" destination="ICI-i4-unq" id="KFT-Hm-fGe"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sAG-1q-jCQ"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -273,8 +275,8 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="DwH-WW-mgN" id="MNl-dl-MUr"/>
-                        <outlet property="followUserButton" destination="PnU-Vm-gcR" id="Mm5-Ps-eiN"/>
                         <outlet property="mapView" destination="GG8-yw-KK5" id="WvB-DB-KSE"/>
+                        <outlet property="toolbar" destination="pzh-rl-yMS" id="fBO-Jm-CJt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAE-AS-7ak" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -305,6 +307,5 @@
     </scenes>
     <resources>
         <image name="compass" width="24" height="24"/>
-        <image name="direction" width="24" height="24"/>
     </resources>
 </document>

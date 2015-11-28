@@ -10,7 +10,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>lunchify</key>
+			<key>lunchify.fi</key>
 			<dict>
 				<key>NSTemporaryExceptionMinimumTLSVersion</key>
 				<true/>
