@@ -27,6 +27,7 @@
 		99827B071C012FEE001D10EF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99827B061C012FEE001D10EF /* Alamofire.framework */; };
 		99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */; };
 		99DA1A1B1C0A68DA006CDD66 /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */; };
+		99DA1A1D1C0A78CF006CDD66 /* espoo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		99827B061C012FEE001D10EF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
+		99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = espoo.gpx; path = ../espoo.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				99827AFB1C012AB4001D10EF /* Views */,
 				99827AD41C012933001D10EF /* Assets.xcassets */,
 				99827AD91C012933001D10EF /* Info.plist */,
+				99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */,
 			);
 			path = Lunchify;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DA1A1D1C0A78CF006CDD66 /* espoo.gpx in Resources */,
 				99827AD81C012933001D10EF /* LaunchScreen.storyboard in Resources */,
 				99827AD51C012933001D10EF /* Assets.xcassets in Resources */,
 				99827AD31C012933001D10EF /* Main.storyboard in Resources */,
