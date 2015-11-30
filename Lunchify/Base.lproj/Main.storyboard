@@ -177,7 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G5D-cT-rcc">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -213,7 +213,7 @@
                             <constraint firstAttribute="trailing" secondItem="G5D-cT-rcc" secondAttribute="trailing" id="Spz-iJ-tOR"/>
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="leading" secondItem="f6Y-87-Nrh" secondAttribute="leading" id="hAS-Xm-u30"/>
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="leading" secondItem="f6Y-87-Nrh" secondAttribute="leading" id="kdD-xW-Pdd"/>
-                            <constraint firstItem="G5D-cT-rcc" firstAttribute="top" secondItem="9H5-Zs-urz" secondAttribute="bottom" id="utd-by-4Uc"/>
+                            <constraint firstItem="G5D-cT-rcc" firstAttribute="top" secondItem="9H5-Zs-urz" secondAttribute="bottom" constant="-64" id="utd-by-4Uc"/>
                             <constraint firstItem="gNx-M9-iQc" firstAttribute="top" secondItem="G5D-cT-rcc" secondAttribute="bottom" id="y0t-ml-fzi"/>
                         </constraints>
                         <variation key="default">
@@ -233,7 +233,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="G5D-cT-rcc" id="Ecl-Uv-OzA"/>
+                        <outlet property="tableView" destination="G5D-cT-rcc" id="t6t-97-loe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAr-ip-CLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
