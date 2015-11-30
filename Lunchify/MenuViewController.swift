@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import JGProgressHUD
 
-class MenuTableViewController: UITableViewController {
+class MenuViewController: UIViewController {
 
     var venue: Venue? {
         didSet {
@@ -18,12 +19,21 @@ class MenuTableViewController: UITableViewController {
     
     var menu: Menu?
     let service = VenuesService()
+    let HUD = JGProgressHUD(style: .Dark)
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func configureView() {
+        
+        // Progress
+        HUD.textLabel.text = "Loading..."
+        HUD.showInView(self.navigationController?.view)
         
         if let venue = self.venue {
             self.title = venue.name
@@ -36,6 +46,11 @@ class MenuTableViewController: UITableViewController {
                     dispatch_async(dispatch_get_main_queue()) {
                         self.menu = menu
                         self.tableView.reloadData()
+                        self.HUD.dismiss()
+                        
+                        if menu.english.count == 0 && menu.finnish.count == 0 {
+                            self.tableView.hidden = true
+                        }
                     }
                     
                 } else {
@@ -45,26 +60,45 @@ class MenuTableViewController: UITableViewController {
         }
         
     }
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowMap" {
+            let controller = (segue.destinationViewController as! MapViewController)
+            controller.venue = venue
+        }
+    }
+    
+}
 
+extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+    
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if let _ = self.menu {
-            return 2
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if let menu = self.menu {
+            return (menu.finnish.count > 0 && menu.english.count > 0) ? 2 : 1
         } else {
             return 0
         }
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Finnish"
-        } else {
-            return "English"
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let menu = self.menu {
+            if menu.finnish.count > 0 || menu.english.count > 0 {
+                if section == 0 {
+                    return menu.finnish.count > 0 ? "Finnish" : "English"
+                } else {
+                    return "English"
+                }
+            }
         }
+        
+        return nil
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if let menu = self.menu {
             switch section {
@@ -80,29 +114,19 @@ class MenuTableViewController: UITableViewController {
         }
         
     }
-
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MealCell", forIndexPath: indexPath)
-
+        
         // Configure the cell...
         if let menu = self.menu {
             let meals = indexPath.section == 0 ? menu.finnish : menu.english
             let meal = meals[indexPath.row]
             cell.textLabel?.text = meal
         }
-
+        
         return cell
     }
     
-    // MARK: - Navigation
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowMap" {
-            let controller = (segue.destinationViewController as! MapViewController)
-            controller.venue = venue
-        }
-    }
-    
-
 }

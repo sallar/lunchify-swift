@@ -104,7 +104,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         if segue.identifier == "ShowVenue" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let venue = venues[indexPath.row]
-                let controller = (segue.destinationViewController as! MenuTableViewController)
+                let controller = (segue.destinationViewController as! MenuViewController)
                 controller.venue = venue
             }
         }

@@ -11,7 +11,6 @@ import MapKit
 
 class MapViewController: UIViewController {
 
-    @IBOutlet weak var followUserButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UIBarButtonItem!
     @IBOutlet weak var toolbar: UIToolbar!
