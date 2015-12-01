@@ -21,12 +21,14 @@ class MenuViewController: UIViewController {
     let service = VenuesService()
     let HUD = JGProgressHUD(style: .Dark)
     
+    @IBOutlet weak var notAvailable: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        notAvailable.hidden = true
     }
     
     func configureView() {
@@ -50,6 +52,7 @@ class MenuViewController: UIViewController {
                         
                         if menu.english.count == 0 && menu.finnish.count == 0 {
                             self.tableView.hidden = true
+                            self.notAvailable.hidden = false
                         }
                     }
                     
