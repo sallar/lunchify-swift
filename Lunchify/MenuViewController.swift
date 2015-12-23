@@ -26,16 +26,20 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Delegates
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Hide stuff
         notAvailable.hidden = true
-    }
-    
-    func configureView() {
         
         // Progress
         HUD.textLabel.text = "Loading..."
         HUD.showInView(self.navigationController?.view)
+    }
+    
+    func configureView() {
         
         if let venue = self.venue {
             self.title = venue.name

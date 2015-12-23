@@ -8,17 +8,17 @@ http://www.garmin.com/xmlschemas/GpxExtensions/v3
 http://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd"
 version="1.1"
 creator="gpx-poi.com">
-   <wpt lat="60.160454" lon="24.724434">
+   <wpt lat="60.176399230957" lon="24.8306999206543">
       <time>2015-11-29T00:04:32Z</time>
       <name>Espoo, Finland</name>
       <extensions>
          <gpxx:WaypointExtension>
             <gpxx:Address>
-               <gpxx:StreetAddress>Etuniementie 1</gpxx:StreetAddress>
+               <gpxx:StreetAddress>Keilaranta 1</gpxx:StreetAddress>
                <gpxx:City>Espoo</gpxx:City>
                <gpxx:State>Uus</gpxx:State>
                <gpxx:Country>Finland</gpxx:Country>
-               <gpxx:PostalCode>02230</gpxx:PostalCode>
+               <gpxx:PostalCode>02150</gpxx:PostalCode>
             </gpxx:Address>
          </gpxx:WaypointExtension>
       </extensions>
