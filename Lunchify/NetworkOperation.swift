@@ -25,6 +25,7 @@ class NetworkOperation {
                 }
             case .Failure(let error):
                 print(error)
+                completion(nil)
             }
         }
     }

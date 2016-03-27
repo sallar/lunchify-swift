@@ -46,22 +46,21 @@ class MenuViewController: UIViewController {
             
             // Get venues
             service.getMenu(venue) { retrievedMenu in
-                if let menu = retrievedMenu {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.HUD.dismiss()
                     
-                    // Go back to main process
-                    dispatch_async(dispatch_get_main_queue()) {
+                    if let menu = retrievedMenu {
                         self.menu = menu
                         self.tableView.reloadData()
-                        self.HUD.dismiss()
                         
                         if menu.english.count == 0 && menu.finnish.count == 0 {
                             self.tableView.hidden = true
                             self.notAvailable.hidden = false
                         }
+                    } else {
+                        self.tableView.hidden = true
+                        self.notAvailable.hidden = false
                     }
-                    
-                } else {
-                    print("Fetch failed")
                 }
             }
         }
