@@ -11,7 +11,7 @@ import CoreLocation
 
 struct VenuesService {
     
-    let apiBaseURL: String = "http://lunchify.fi/api/"
+    let apiBaseURL: String = "http://lunchify:8080/api/"
     let network: NetworkOperation = NetworkOperation()
     
     func getVenues(location: CLLocation, completion: (Venues? -> Void)) {
@@ -36,8 +36,9 @@ struct VenuesService {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         dateFormatter.timeZone = NSTimeZone.localTimeZone()
-        let date = dateFormatter.stringFromDate(NSDate())
-        let url = "\(apiBaseURL)venues/\(venue.id)/\(date)"
+        //let date = dateFormatter.stringFromDate(NSDate())
+        //let url = "\(apiBaseURL)venues/\(venue.id)/\(date)"
+        let url = "\(apiBaseURL)venues/\(venue.id)/menu/2016-03-21"
         
         network.downloadJSONFromURL(url) { response in
             var menu: Menu?

@@ -11,16 +11,16 @@ import SwiftyJSON
 
 struct Menu {
     
-    var finnish: [String] = []
-    var english: [String] = []
+    var finnish: [JSON] = []
+    var english: [JSON] = []
     
     init(meals: [JSON]) {
         
         for meal in meals {
-            if meal["english"].boolValue {
-                english.append(meal["name"].stringValue)
+            if meal["lang"] == "eng" {
+                english.append(meal)
             } else {
-                finnish.append(meal["name"].stringValue)
+                finnish.append(meal)
             }
         }
         

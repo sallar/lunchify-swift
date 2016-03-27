@@ -29,8 +29,8 @@ struct Venue {
         id = venue["_id"].string!
         name = venue["name"].string
         address = venue["address"].string
-        latitude = venue["location"][1].double
-        longitude = venue["location"][0].double
+        latitude = venue["location"]["coordinates"][1].double
+        longitude = venue["location"]["coordinates"][0].double
         simpleName = venue["simple_name"].string
         
         // Make a CoreLocation object 

@@ -130,7 +130,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         if let menu = self.menu {
             let meals = indexPath.section == 0 ? menu.finnish : menu.english
             let meal = meals[indexPath.row]
-            cell.textLabel?.text = meal
+            cell.textLabel?.text = meal["title"].stringValue
         }
         
         return cell
