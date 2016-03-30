@@ -105,7 +105,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if let menu = self.menu {
             switch section {
             case 0:
@@ -129,7 +128,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         if let menu = self.menu {
             let meals = indexPath.section == 0 ? menu.finnish : menu.english
             let meal = meals[indexPath.row]
+            let flags:[String] = meal["flags"].arrayValue.map { $0.string!.uppercaseString }
             cell.textLabel?.text = meal["title"].stringValue
+            cell.detailTextLabel?.text = flags.joinWithSeparator(", ")
         }
         
         return cell
