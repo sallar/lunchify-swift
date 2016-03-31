@@ -10,9 +10,11 @@ import UIKit
 import CoreLocation
 import JGProgressHUD
 
-class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate {
+class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate, UISearchResultsUpdating {
     
     var venues: [Venue] = []
+    var filteredVenues: [Venue] = []
+    var resultSearchController: UISearchController?
     var location: CLLocation?
     let locationManager = CLLocationManager()
     let HUD = JGProgressHUD(style: .Dark)
@@ -26,6 +28,19 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         locationManager.distanceFilter = 500
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        // Search bar
+        definesPresentationContext = true
+        self.resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            controller.searchBar.searchBarStyle = .Minimal
+            
+            self.tableView.tableHeaderView = controller.searchBar
+            return controller
+        })()
     }
 
     func configureView() {
@@ -53,6 +68,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
                 // Go back to main process
                 dispatch_async(dispatch_get_main_queue()) {
                     self.venues = venues.allVenues
+                    self.filteredVenues = self.venues
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                     self.HUD.dismiss()
@@ -75,13 +91,13 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return venues.count
+        return filteredVenues.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as! VenueTableViewCell
-        let venue = self.venues[indexPath.row]
+        let venue = self.filteredVenues[indexPath.row]
 
         // Configure the cell...
         cell.venueTitleLabel?.text = venue.name
@@ -103,7 +119,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowVenue" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let venue = venues[indexPath.row]
+                let venue = filteredVenues[indexPath.row]
                 let controller = (segue.destinationViewController as! MenuViewController)
                 controller.venue = venue
             }
@@ -120,6 +136,17 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
             self.location = locations.first
         }
     }
-
+    
+    // MARK: - Search
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filteredVenues = searchText.isEmpty ? venues : venues.filter({(venue: Venue) -> Bool in
+                return venue.name!.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
+            })
+            
+            tableView.reloadData()
+        }
+    }
 
 }

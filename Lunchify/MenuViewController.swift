@@ -30,6 +30,8 @@ class MenuViewController: UIViewController {
         // Delegates
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         // Hide stuff
         notAvailable.hidden = true
@@ -120,17 +122,17 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MealCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("MealCell", forIndexPath: indexPath) as! MenuTableViewCell
         
         // Configure the cell...
         if let menu = self.menu {
             let meals = indexPath.section == 0 ? menu.finnish : menu.english
             let meal = meals[indexPath.row]
             let flags:[String] = meal["flags"].arrayValue.map { $0.string!.uppercaseString }
-            cell.textLabel?.text = meal["title"].stringValue
-            cell.detailTextLabel?.text = flags.joinWithSeparator(", ")
+            
+            cell.mealTitle?.text = meal["title"].stringValue
+            cell.mealFlags?.text = flags.joinWithSeparator(", ")
         }
         
         return cell

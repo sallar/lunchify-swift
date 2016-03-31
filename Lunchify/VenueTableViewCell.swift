@@ -12,7 +12,7 @@ class VenueTableViewCell: UITableViewCell {
 
     @IBOutlet weak var venueTitleLabel: UILabel?
     @IBOutlet weak var venueAddressLabel: UILabel?
-    @IBOutlet weak var venueDistanceLabel: UILabel!
+    @IBOutlet weak var venueDistanceLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()

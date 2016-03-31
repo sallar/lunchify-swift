@@ -10,9 +10,12 @@ import UIKit
 
 class MenuTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var mealTitle: UILabel?
+    @IBOutlet weak var mealFlags: UILabel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
