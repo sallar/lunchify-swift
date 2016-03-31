@@ -304,9 +304,6 @@
                             <constraint firstItem="kV7-7k-NzC" firstAttribute="top" secondItem="9H5-Zs-urz" secondAttribute="bottom" id="zcJ-I7-aWr"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="kV7-7k-NzC"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="28e-LL-xZs"/>
                                 <exclude reference="5Ed-9n-X6J"/>

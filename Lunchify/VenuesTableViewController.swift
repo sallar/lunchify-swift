@@ -36,7 +36,6 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
             controller.searchResultsUpdater = self
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.sizeToFit()
-            controller.searchBar.searchBarStyle = .Minimal
             
             self.tableView.tableHeaderView = controller.searchBar
             return controller
