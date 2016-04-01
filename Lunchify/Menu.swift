@@ -11,19 +11,42 @@ import SwiftyJSON
 
 struct Menu {
     
-    var finnish: [JSON] = []
-    var english: [JSON] = []
+    let lang = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+    var separated: [[JSON]] = [[], []]
+    var langs: [String] = [
+        NSLocalizedString("FINNISH", comment: "Finnish"),
+        NSLocalizedString("ENGLISH", comment: "English"),
+        ]
     
     init(meals: [JSON]) {
-        
         for meal in meals {
-            if meal["lang"] == "eng" {
-                english.append(meal)
+            if meal["lang"] == "fin" {
+                separated[0].append(meal)
             } else {
-                finnish.append(meal)
+                separated[1].append(meal)
             }
         }
         
+        if lang == "en" {
+            separated = separated.reverse()
+            langs = langs.reverse()
+        }
+    }
+    
+    func isEmpty() -> Bool {
+        return separated[0].count == 0 && separated[0].count == 0
+    }
+    
+    func getLanguageForIndex(index: Int) -> String {
+        return langs[index]
+    }
+    
+    func getMealsForIndex(index: Int) -> [JSON] {
+        return separated[index]
+    }
+    
+    func getSetsCount() -> Int {
+        return separated.count
     }
     
 }

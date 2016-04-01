@@ -43,12 +43,12 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     }
 
     func configureView() {
-        tableView.rowHeight = 64
+        tableView.rowHeight = 64.0
         let image = UIImage(named: "logo")
         self.navigationItem.titleView = UIImageView(image: image)
         
         // Progress
-        HUD.textLabel.text = "Loading..."
+        HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
         HUD.showInView(self.navigationController?.view)
     }
     

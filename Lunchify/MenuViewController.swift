@@ -37,7 +37,7 @@ class MenuViewController: UIViewController {
         notAvailable.hidden = true
         
         // Progress
-        HUD.textLabel.text = "Loading..."
+        HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
         HUD.showInView(self.navigationController?.view)
     }
     
@@ -55,7 +55,7 @@ class MenuViewController: UIViewController {
                         self.menu = menu
                         self.tableView.reloadData()
                         
-                        if menu.english.count == 0 && menu.finnish.count == 0 {
+                        if menu.isEmpty() {
                             self.tableView.hidden = true
                             self.notAvailable.hidden = false
                         }
@@ -86,21 +86,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if let menu = self.menu {
-            return (menu.finnish.count > 0 && menu.english.count > 0) ? 2 : 1
-        } else {
-            return 0
+            return menu.getSetsCount()
         }
+        
+        return 0
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let menu = self.menu {
-            if menu.finnish.count > 0 || menu.english.count > 0 {
-                if section == 0 {
-                    return menu.finnish.count > 0 ? "Finnish" : "English"
-                } else {
-                    return "English"
-                }
-            }
+            return menu.getLanguageForIndex(section)
         }
         
         return nil
@@ -108,18 +102,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let menu = self.menu {
-            switch section {
-            case 0:
-                return menu.finnish.count
-            case 1:
-                return menu.english.count
-            default:
-                return 0
-            }
-        } else {
-            return 0
+            return menu.getMealsForIndex(section).count
         }
         
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -127,12 +113,17 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Configure the cell...
         if let menu = self.menu {
-            let meals = indexPath.section == 0 ? menu.finnish : menu.english
+            let meals = menu.getMealsForIndex(indexPath.section)
             let meal = meals[indexPath.row]
             let flags:[String] = meal["flags"].arrayValue.map { $0.string!.uppercaseString }
             
             cell.mealTitle?.text = meal["title"].stringValue
-            cell.mealFlags?.text = flags.joinWithSeparator(", ")
+            if flags.count > 0 {
+                cell.mealFlags?.hidden = false
+                cell.mealFlags?.text = flags.joinWithSeparator(", ")
+            } else {
+                cell.mealFlags?.hidden = true
+            }
         }
         
         return cell

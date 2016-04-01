@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Lunchify
+
+  Created by Sallar Kaboli on 4/1/16.
+  Copyright © 2016 Sallar Kaboli. All rights reserved.
+*/
+LOADING = "Loading...";
+ENGLISH = "English";
+FINNISH = "Finnish";

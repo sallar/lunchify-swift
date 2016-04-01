@@ -25,6 +25,7 @@
 		99827B021C012DC0001D10EF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99827B011C012DC0001D10EF /* SwiftyJSON.framework */; };
 		99827B051C012EB8001D10EF /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827B041C012EB8001D10EF /* NetworkOperation.swift */; };
 		99827B071C012FEE001D10EF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99827B061C012FEE001D10EF /* Alamofire.framework */; };
+		99921CFD1CAEE0BD003134E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99921CFF1CAEE0BD003134E4 /* Localizable.strings */; };
 		99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */; };
 		99DA1A1B1C0A68DA006CDD66 /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */; };
 		99DA1A1D1C0A78CF006CDD66 /* espoo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */; };
@@ -73,6 +74,10 @@
 		99827B011C012DC0001D10EF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		99827B041C012EB8001D10EF /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		99827B061C012FEE001D10EF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		99921CEC1CAEDD78003134E4 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Main.strings; sourceTree = "<group>"; };
+		99921CED1CAEDD78003134E4 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		99921CFE1CAEE0BD003134E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		99921D001CAEE0BF003134E4 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = espoo.gpx; path = ../espoo.gpx; sourceTree = "<group>"; };
@@ -149,6 +154,7 @@
 				99827AD41C012933001D10EF /* Assets.xcassets */,
 				99827AD91C012933001D10EF /* Info.plist */,
 				99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */,
+				99921CFF1CAEE0BD003134E4 /* Localizable.strings */,
 			);
 			path = Lunchify;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fi,
 			);
 			mainGroup = 99827AC11C012933001D10EF;
 			productRefGroup = 99827ACB1C012933001D10EF /* Products */;
@@ -319,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99921CFD1CAEE0BD003134E4 /* Localizable.strings in Resources */,
 				99DA1A1D1C0A78CF006CDD66 /* espoo.gpx in Resources */,
 				99827AD81C012933001D10EF /* LaunchScreen.storyboard in Resources */,
 				99827AD51C012933001D10EF /* Assets.xcassets in Resources */,
@@ -418,6 +426,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				99827AD21C012933001D10EF /* Base */,
+				99921CEC1CAEDD78003134E4 /* fi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -426,8 +435,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				99827AD71C012933001D10EF /* Base */,
+				99921CED1CAEDD78003134E4 /* fi */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		99921CFF1CAEE0BD003134E4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99921CFE1CAEE0BD003134E4 /* Base */,
+				99921D001CAEE0BF003134E4 /* fi */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -521,15 +540,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Salar Kaboli (S4S57TCD63)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Salar Kaboli (S4S57TCD63)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Lunchify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.sallar.Lunchify;
+				PRODUCT_BUNDLE_IDENTIFIER = Lunchify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -542,15 +561,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Salar Kaboli (T73DCRT9J5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Salar Kaboli (T73DCRT9J5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Lunchify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.sallar.Lunchify;
+				PRODUCT_BUNDLE_IDENTIFIER = Lunchify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
