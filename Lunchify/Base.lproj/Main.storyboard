@@ -174,85 +174,42 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="l97-lJ-Hso" userLabel="Footer">
-                                    <rect key="frame" x="0.0" y="160" width="600" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="136" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MealCell" rowHeight="68" id="cgd-wl-fZV" customClass="MenuTableViewCell" customModule="Lunchify" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="68"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MealCell" id="cgd-wl-fZV" customClass="MenuTableViewCell" customModule="Lunchify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cgd-wl-fZV" id="2Jt-nT-LC6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="67.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGh-JZ-j6p">
-                                                    <rect key="frame" x="15" y="10" width="570" height="31.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8km-QB-jUn">
-                                                    <rect key="frame" x="15" y="46.5" width="570" height="11"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="11" id="Xxq-eq-e4W"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="kkN-KE-ooV">
+                                                    <rect key="frame" x="15" y="10" width="570" height="24"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGh-JZ-j6p">
+                                                            <rect key="frame" x="0.0" y="0.0" width="570" height="13"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flags" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8km-QB-jUn">
+                                                            <rect key="frame" x="0.0" y="17" width="570" height="7"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="FGh-JZ-j6p" firstAttribute="leading" secondItem="2Jt-nT-LC6" secondAttribute="leadingMargin" constant="7" id="0zA-Qd-xiS"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="top" secondItem="FGh-JZ-j6p" secondAttribute="bottom" constant="4.5" id="9Sh-Tr-nP0"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8km-QB-jUn" secondAttribute="trailing" constant="7" id="9vG-zs-re2"/>
-                                                <constraint firstItem="FGh-JZ-j6p" firstAttribute="leading" secondItem="2Jt-nT-LC6" secondAttribute="leadingMargin" constant="7" id="Aij-EE-q2j"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8km-QB-jUn" secondAttribute="trailing" constant="7" id="BFo-kv-FEl"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FGh-JZ-j6p" secondAttribute="trailing" constant="7" id="GHw-Wa-4ok"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="top" secondItem="2Jt-nT-LC6" secondAttribute="topMargin" constant="29" id="JWF-yo-ycF"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="leading" secondItem="2Jt-nT-LC6" secondAttribute="leadingMargin" constant="7" id="MtI-fk-S0u"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="leading" secondItem="2Jt-nT-LC6" secondAttribute="leadingMargin" constant="7" id="Nza-FK-ZHS"/>
-                                                <constraint firstItem="FGh-JZ-j6p" firstAttribute="top" secondItem="2Jt-nT-LC6" secondAttribute="topMargin" constant="4" id="SS4-Sy-J0Y"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="leading" secondItem="2Jt-nT-LC6" secondAttribute="leadingMargin" constant="7" id="T9I-4G-1u7"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="leading" secondItem="2Jt-nT-LC6" secondAttribute="leadingMargin" constant="7" id="agA-rh-llm"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="top" secondItem="FGh-JZ-j6p" secondAttribute="bottom" constant="5" id="ceP-IY-nA2"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="8km-QB-jUn" secondAttribute="bottom" constant="7" id="eSi-zk-Dq2"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="8km-QB-jUn" secondAttribute="bottom" constant="2" id="ec2-TX-bsT"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="top" secondItem="FGh-JZ-j6p" secondAttribute="bottom" constant="2" id="lQp-kb-ZFb"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="FGh-JZ-j6p" secondAttribute="leading" constant="7" id="rcI-dX-wGT"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="top" secondItem="FGh-JZ-j6p" secondAttribute="bottom" constant="4.5" id="t1k-wu-i9P"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8km-QB-jUn" secondAttribute="trailing" constant="7" id="t7i-sx-gxb"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="8km-QB-jUn" secondAttribute="bottom" constant="3" id="tF3-xf-24I"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FGh-JZ-j6p" secondAttribute="trailing" constant="7" id="uBl-WE-fiR"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FGh-JZ-j6p" secondAttribute="trailing" constant="7" id="uzc-nt-tdN"/>
-                                                <constraint firstItem="FGh-JZ-j6p" firstAttribute="top" secondItem="2Jt-nT-LC6" secondAttribute="topMargin" constant="2" id="v9O-Gy-Wnz"/>
-                                                <constraint firstItem="FGh-JZ-j6p" firstAttribute="top" secondItem="2Jt-nT-LC6" secondAttribute="topMargin" constant="2" id="wZl-Gc-mGd"/>
-                                                <constraint firstItem="FGh-JZ-j6p" firstAttribute="leading" secondItem="2Jt-nT-LC6" secondAttribute="leadingMargin" constant="7" id="wsV-Zi-VID"/>
-                                                <constraint firstItem="8km-QB-jUn" firstAttribute="top" secondItem="FGh-JZ-j6p" secondAttribute="bottom" id="yw0-Ap-mJG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kkN-KE-ooV" secondAttribute="bottom" constant="2" id="4Yd-If-R97"/>
+                                                <constraint firstItem="kkN-KE-ooV" firstAttribute="leading" secondItem="2Jt-nT-LC6" secondAttribute="leadingMargin" constant="7" id="QEx-Ez-g8d"/>
+                                                <constraint firstItem="kkN-KE-ooV" firstAttribute="top" secondItem="2Jt-nT-LC6" secondAttribute="topMargin" constant="2" id="Wox-xl-L4m"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kkN-KE-ooV" secondAttribute="trailing" constant="7" id="oB5-Rk-FlI"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="0zA-Qd-xiS"/>
-                                                    <exclude reference="Aij-EE-q2j"/>
-                                                    <exclude reference="SS4-Sy-J0Y"/>
-                                                    <exclude reference="rcI-dX-wGT"/>
-                                                    <exclude reference="uBl-WE-fiR"/>
-                                                    <exclude reference="uzc-nt-tdN"/>
-                                                    <exclude reference="wZl-Gc-mGd"/>
-                                                    <exclude reference="9Sh-Tr-nP0"/>
-                                                    <exclude reference="BFo-kv-FEl"/>
-                                                    <exclude reference="JWF-yo-ycF"/>
-                                                    <exclude reference="MtI-fk-S0u"/>
-                                                    <exclude reference="Nza-FK-ZHS"/>
-                                                    <exclude reference="agA-rh-llm"/>
-                                                    <exclude reference="eSi-zk-Dq2"/>
-                                                    <exclude reference="lQp-kb-ZFb"/>
-                                                    <exclude reference="t1k-wu-i9P"/>
-                                                    <exclude reference="t7i-sx-gxb"/>
-                                                    <exclude reference="tF3-xf-24I"/>
-                                                    <exclude reference="yw0-Ap-mJG"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="mealFlags" destination="8km-QB-jUn" id="7hC-D0-jmL"/>
