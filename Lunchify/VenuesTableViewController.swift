@@ -69,6 +69,9 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         // Empty State
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
+        
+        // Back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
     
     // MARK: - Load Venues

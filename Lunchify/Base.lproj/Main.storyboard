@@ -429,7 +429,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wix-3d-CNM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jnR-eR-gGS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="back" backIndicatorTransitionMaskImage="back" id="jnR-eR-gGS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.76935011148452759" green="0.063184045255184174" blue="0.35298755764961243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -446,9 +446,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="24" height="24"/>
         <image name="calendar-circle" width="25" height="25"/>
         <image name="compass" width="24" height="24"/>
-        <image name="info" width="24" height="24"/>
+        <image name="info" width="23" height="24"/>
         <image name="location-circle" width="25" height="25"/>
     </resources>
 </document>
