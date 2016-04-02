@@ -13,6 +13,7 @@ import CoreLocation
 class MenuViewController: UIViewController {
 
     var location: CLLocation?
+    var date: String?
     var venue: Venue? {
         didSet {
             loadMenu()
@@ -28,6 +29,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var venueAddressLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,7 @@ class MenuViewController: UIViewController {
             self.venueNameLabel?.text = venue.name
             self.venueAddressLabel?.text = venue.address
             self.distanceLabel?.text = venue.distanceFromLocation(location)
+            self.dateLabel?.text = date!.capitalizedString
         }
     }
     

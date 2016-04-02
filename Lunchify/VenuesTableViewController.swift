@@ -17,6 +17,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     var shouldEmptyStateBeShowed: Bool = false
     var venues: [Venue] = []
     var filteredVenues: [Venue] = []
+    let venuesService = VenuesService()
     var resultSearchController: UISearchController?
     var location: CLLocation? {
         didSet {
@@ -73,15 +74,12 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     // MARK: - Load Venues
     
     func loadVenues() {
-        let venues = VenuesService()
-        
         // Get venues
-        venues.getVenues(self.location!) { retrievedVenues in
+        venuesService.getVenues(self.location!) { retrievedVenues in
             if let venues = retrievedVenues {
                 
                 // Go back to main process
                 dispatch_async(dispatch_get_main_queue()) {
-                    
                     self.venues = venues.allVenues
                     self.filteredVenues = self.venues
                     self.tableView.reloadData()
@@ -139,6 +137,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
                 let controller = (segue.destinationViewController as! MenuViewController)
                 controller.venue = venue
                 controller.location = self.location
+                controller.date = venuesService.getMenuDate("EEEE")
             }
         }
     }

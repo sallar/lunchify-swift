@@ -48,7 +48,7 @@ struct VenuesService {
         }
     }
     
-    func getMenuDate() -> String {
+    func getMenuDate(format: String = "YYYY-MM-dd") -> String {
         // Get Date
         var today = NSDate()
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
@@ -63,7 +63,7 @@ struct VenuesService {
         
         // Formatter
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.dateFormat = format
         dateFormatter.timeZone = NSTimeZone.localTimeZone()
         
         // Return

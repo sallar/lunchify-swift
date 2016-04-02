@@ -203,8 +203,15 @@
                                                 <constraint firstAttribute="height" constant="25" id="qWw-yE-ayR"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-circle" translatesAutoresizingMaskIntoConstraints="NO" id="9tD-Qv-126">
+                                            <rect key="frame" x="119" y="69" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="dJR-4G-enP"/>
+                                                <constraint firstAttribute="width" constant="25" id="kba-qP-Wop"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-Gl-449">
-                                            <rect key="frame" x="49" y="71" width="57" height="17"/>
+                                            <rect key="frame" x="49" y="72" width="57" height="17"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -222,6 +229,12 @@
                                                 </mask>
                                             </variation>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOu-8B-9Sc">
+                                            <rect key="frame" x="152" y="72" width="31" height="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -231,13 +244,18 @@
                                         <constraint firstItem="koM-ih-wzr" firstAttribute="top" secondItem="iVc-7N-PJ7" secondAttribute="bottom" constant="8" id="K4j-MN-WwB"/>
                                         <constraint firstItem="r46-m9-k9r" firstAttribute="leading" secondItem="Xyd-Ax-GvO" secondAttribute="leading" constant="16" id="KoO-fj-ePa"/>
                                         <constraint firstItem="koM-ih-wzr" firstAttribute="leading" secondItem="Xyd-Ax-GvO" secondAttribute="leading" constant="16" id="NEo-lY-vyF"/>
+                                        <constraint firstItem="9tD-Qv-126" firstAttribute="leading" secondItem="dJb-Gl-449" secondAttribute="trailing" constant="13" id="OFg-fl-LOo"/>
+                                        <constraint firstItem="9tD-Qv-126" firstAttribute="top" secondItem="iVc-7N-PJ7" secondAttribute="bottom" constant="8" id="POD-GO-w8F"/>
                                         <constraint firstAttribute="trailing" secondItem="nhf-cm-MEV" secondAttribute="trailing" id="PvB-nz-Qzj"/>
-                                        <constraint firstItem="dJb-Gl-449" firstAttribute="top" secondItem="iVc-7N-PJ7" secondAttribute="bottom" constant="10" id="VpS-Rm-Tlo"/>
+                                        <constraint firstItem="dJb-Gl-449" firstAttribute="top" secondItem="iVc-7N-PJ7" secondAttribute="bottom" constant="11" id="VpS-Rm-Tlo"/>
+                                        <constraint firstItem="9tD-Qv-126" firstAttribute="leading" secondItem="Xyd-Ax-GvO" secondAttribute="leading" constant="119" id="Wjk-y8-ucG"/>
                                         <constraint firstItem="iVc-7N-PJ7" firstAttribute="leading" secondItem="Xyd-Ax-GvO" secondAttribute="leading" constant="16" id="Wx9-Cu-ywq"/>
                                         <constraint firstItem="nhf-cm-MEV" firstAttribute="leading" secondItem="Xyd-Ax-GvO" secondAttribute="leading" id="aDb-wK-ngH"/>
                                         <constraint firstAttribute="bottom" secondItem="nhf-cm-MEV" secondAttribute="bottom" constant="90" id="dFh-sV-GUz"/>
                                         <constraint firstItem="dJb-Gl-449" firstAttribute="leading" secondItem="koM-ih-wzr" secondAttribute="trailing" constant="8" id="ehl-do-2rt"/>
                                         <constraint firstAttribute="bottom" secondItem="nhf-cm-MEV" secondAttribute="bottom" id="gLF-pD-eh1"/>
+                                        <constraint firstItem="EOu-8B-9Sc" firstAttribute="leading" secondItem="9tD-Qv-126" secondAttribute="trailing" constant="8" id="qLi-zA-4hq"/>
+                                        <constraint firstItem="EOu-8B-9Sc" firstAttribute="top" secondItem="iVc-7N-PJ7" secondAttribute="bottom" constant="11" id="uXZ-oV-WM9"/>
                                         <constraint firstAttribute="trailing" secondItem="nhf-cm-MEV" secondAttribute="trailing" constant="143" id="xIU-A4-7v3"/>
                                     </constraints>
                                     <variation key="default">
@@ -245,6 +263,7 @@
                                             <exclude reference="C1m-d1-f7z"/>
                                             <exclude reference="dFh-sV-GUz"/>
                                             <exclude reference="xIU-A4-7v3"/>
+                                            <exclude reference="Wjk-y8-ucG"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -338,6 +357,9 @@
                             <constraint firstItem="kV7-7k-NzC" firstAttribute="top" secondItem="9H5-Zs-urz" secondAttribute="bottom" id="zcJ-I7-aWr"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="kV7-7k-NzC"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="28e-LL-xZs"/>
                                 <exclude reference="5Ed-9n-X6J"/>
@@ -356,6 +378,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateLabel" destination="EOu-8B-9Sc" id="aoY-vR-uTL"/>
                         <outlet property="distanceLabel" destination="dJb-Gl-449" id="RFu-Ce-YMP"/>
                         <outlet property="notAvailable" destination="kV7-7k-NzC" id="hTJ-yS-VG0"/>
                         <outlet property="tableView" destination="G5D-cT-rcc" id="t6t-97-loe"/>
@@ -459,6 +482,7 @@
     </scenes>
     <resources>
         <image name="Bread" width="140" height="138"/>
+        <image name="calendar-circle" width="25" height="25"/>
         <image name="compass" width="24" height="24"/>
         <image name="info" width="24" height="24"/>
         <image name="location-circle" width="25" height="25"/>
