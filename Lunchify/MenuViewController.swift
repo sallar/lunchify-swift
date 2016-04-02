@@ -59,6 +59,9 @@ class MenuViewController: UIViewController {
             self.distanceLabel?.text = venue.distanceFromLocation(location)
             self.dateLabel?.text = date!.capitalizedString
         }
+        
+        // Navigation
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
     
     func loadMenu() {

@@ -122,18 +122,12 @@
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GS-Fc-cXP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eKB-Se-V8g">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="eKB-Se-V8g">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-pm-gps">
-                                            <rect key="frame" x="276" y="290.5" width="46.5" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05w-xh-UM3">
-                                            <rect key="frame" x="273" y="320" width="54" height="30"/>
+                                            <rect key="frame" x="273" y="533" width="54" height="30"/>
                                             <state key="normal" title="Dismiss">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -141,13 +135,83 @@
                                                 <action selector="dismissView:" destination="Y93-eU-fmI" eventType="touchUpInside" id="1N8-uH-Ls1"/>
                                             </connections>
                                         </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sca-Kt-dia">
+                                            <rect key="frame" x="133" y="225" width="335" height="149"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Sallar Kaboli" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD4-9E-x4w">
+                                                    <rect key="frame" x="77" y="81" width="181" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some icons designed by Freepik." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm2-5n-y5v">
+                                                    <rect key="frame" x="60" y="114" width="214" height="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Illustrations by Swifticons." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Om-QJ-yBQ">
+                                                    <rect key="frame" x="83" y="134" width="169" height="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slogan" translatesAutoresizingMaskIntoConstraints="NO" id="s7Y-Rc-OxL">
+                                                    <rect key="frame" x="40" y="8" width="255" height="67"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="255" id="AXw-HC-QPj"/>
+                                                        <constraint firstAttribute="height" constant="67" id="fHY-i6-npc"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s7Y-Rc-OxL" firstAttribute="centerX" secondItem="Sca-Kt-dia" secondAttribute="centerX" id="6f4-h4-tX6"/>
+                                                <constraint firstAttribute="bottom" secondItem="9Om-QJ-yBQ" secondAttribute="bottom" constant="-2" id="6vw-wx-wlf"/>
+                                                <constraint firstItem="s7Y-Rc-OxL" firstAttribute="centerX" secondItem="Sca-Kt-dia" secondAttribute="centerX" id="IFD-8m-ZFp"/>
+                                                <constraint firstItem="9Om-QJ-yBQ" firstAttribute="top" secondItem="Nm2-5n-y5v" secondAttribute="bottom" constant="3" id="IFp-th-5ki"/>
+                                                <constraint firstItem="s7Y-Rc-OxL" firstAttribute="centerX" secondItem="Sca-Kt-dia" secondAttribute="centerX" id="JNp-be-L01"/>
+                                                <constraint firstItem="s7Y-Rc-OxL" firstAttribute="centerX" secondItem="uD4-9E-x4w" secondAttribute="centerX" id="Kgv-xh-Y8t"/>
+                                                <constraint firstItem="Nm2-5n-y5v" firstAttribute="centerX" secondItem="Sca-Kt-dia" secondAttribute="centerX" id="Naw-aD-Pa9"/>
+                                                <constraint firstItem="s7Y-Rc-OxL" firstAttribute="top" secondItem="Sca-Kt-dia" secondAttribute="top" constant="8" id="P6q-qa-mxk"/>
+                                                <constraint firstAttribute="height" constant="149" id="UXo-Zb-dbs"/>
+                                                <constraint firstItem="uD4-9E-x4w" firstAttribute="top" secondItem="s7Y-Rc-OxL" secondAttribute="bottom" constant="8" id="bnM-q7-gni"/>
+                                                <constraint firstItem="9Om-QJ-yBQ" firstAttribute="centerX" secondItem="Sca-Kt-dia" secondAttribute="centerX" id="jAB-9a-U9x"/>
+                                                <constraint firstAttribute="width" constant="335" id="l4p-Dd-lCc"/>
+                                                <constraint firstItem="s7Y-Rc-OxL" firstAttribute="top" secondItem="Sca-Kt-dia" secondAttribute="top" id="m9f-Hd-f1t"/>
+                                                <constraint firstItem="s7Y-Rc-OxL" firstAttribute="centerX" secondItem="Nm2-5n-y5v" secondAttribute="centerX" id="mzE-bi-jox"/>
+                                                <constraint firstItem="uD4-9E-x4w" firstAttribute="top" secondItem="s7Y-Rc-OxL" secondAttribute="bottom" constant="6" id="qDd-2t-t04"/>
+                                                <constraint firstItem="uD4-9E-x4w" firstAttribute="centerX" secondItem="Sca-Kt-dia" secondAttribute="centerX" id="xgO-Xh-B4t"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="6f4-h4-tX6"/>
+                                                    <exclude reference="IFD-8m-ZFp"/>
+                                                    <exclude reference="Kgv-xh-Y8t"/>
+                                                    <exclude reference="m9f-Hd-f1t"/>
+                                                    <exclude reference="mzE-bi-jox"/>
+                                                    <exclude reference="bnM-q7-gni"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="05w-xh-UM3" firstAttribute="centerY" secondItem="eKB-Se-V8g" secondAttribute="centerY" constant="35" id="0fK-Cb-uAc"/>
                                         <constraint firstItem="05w-xh-UM3" firstAttribute="centerX" secondItem="eKB-Se-V8g" secondAttribute="centerX" id="1y3-1D-v8F"/>
-                                        <constraint firstItem="Cbc-pm-gps" firstAttribute="centerY" secondItem="eKB-Se-V8g" secondAttribute="centerY" id="2Qx-eN-ReE"/>
-                                        <constraint firstItem="Cbc-pm-gps" firstAttribute="centerX" secondItem="eKB-Se-V8g" secondAttribute="centerX" id="Up9-G6-aMY"/>
+                                        <constraint firstAttribute="bottom" secondItem="05w-xh-UM3" secondAttribute="bottom" constant="37" id="8pm-BS-buF"/>
+                                        <constraint firstItem="Sca-Kt-dia" firstAttribute="centerY" secondItem="eKB-Se-V8g" secondAttribute="centerY" id="Ktc-bF-pfl"/>
+                                        <constraint firstItem="05w-xh-UM3" firstAttribute="centerX" secondItem="eKB-Se-V8g" secondAttribute="centerX" id="Yqc-I1-smU"/>
+                                        <constraint firstItem="Sca-Kt-dia" firstAttribute="centerX" secondItem="eKB-Se-V8g" secondAttribute="centerX" id="kex-R3-ZXy"/>
+                                        <constraint firstAttribute="bottom" secondItem="05w-xh-UM3" secondAttribute="bottom" constant="37" id="rPG-xb-eGC"/>
+                                        <constraint firstItem="05w-xh-UM3" firstAttribute="centerX" secondItem="eKB-Se-V8g" secondAttribute="centerX" id="vSD-Ki-D5u"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="0fK-Cb-uAc"/>
+                                            <exclude reference="1y3-1D-v8F"/>
+                                            <exclude reference="Yqc-I1-smU"/>
+                                            <exclude reference="rPG-xb-eGC"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
@@ -451,5 +515,6 @@
         <image name="compass" width="24" height="24"/>
         <image name="info" width="23" height="24"/>
         <image name="location-circle" width="25" height="25"/>
+        <image name="slogan" width="509" height="133"/>
     </resources>
 </document>

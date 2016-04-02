@@ -42,15 +42,16 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         tableView.estimatedRowHeight = 64.0
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorColor = UIColor(rgba: "#F0F0F0")
-        let image = UIImage(named: "logo")
-        self.navigationItem.titleView = UIImageView(image: image)
         
         // Progress
         HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
         HUD.showInView(self.navigationController?.view)
         
-        // Remove 1px border
+        // Navigation
+        let image = UIImage(named: "logo")
+        self.navigationItem.titleView = UIImageView(image: image)
         self.navigationController?.navigationBar.subviews[0].subviews[1].hidden = true
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         // Search bar
         definesPresentationContext = true
@@ -69,9 +70,6 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         // Empty State
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
-        
-        // Back button
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
     
     // MARK: - Load Venues
