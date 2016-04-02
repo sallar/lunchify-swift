@@ -14,7 +14,7 @@ import DZNEmptyDataSet
 
 class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate, UISearchResultsUpdating, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
-    var initialSearchPerformed: Bool = false
+    var shouldEmptyStateBeShowed: Bool = false
     var venues: [Venue] = []
     var filteredVenues: [Venue] = []
     var resultSearchController: UISearchController?
@@ -87,7 +87,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                     self.HUD.dismiss()
-                    self.initialSearchPerformed = true
+                    self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
                 }
                 
             } else {
@@ -185,6 +185,6 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     }
     
     func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
-        return self.initialSearchPerformed
+        return self.shouldEmptyStateBeShowed
     }
 }
