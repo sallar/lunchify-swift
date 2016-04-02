@@ -313,59 +313,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kV7-7k-NzC" userLabel="Not Available View">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bread" translatesAutoresizingMaskIntoConstraints="NO" id="DmA-7b-FK8">
-                                        <rect key="frame" x="210" y="132" width="180" height="180"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="6eH-uL-3MF"/>
-                                            <constraint firstAttribute="height" constant="180" id="HP0-Ku-nVm"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today’s menu is not available." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asW-Sf-NuA">
-                                        <rect key="frame" x="189" y="312" width="223.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="asW-Sf-NuA" firstAttribute="top" secondItem="DmA-7b-FK8" secondAttribute="bottom" id="2Yu-z8-e9q"/>
-                                    <constraint firstItem="DmA-7b-FK8" firstAttribute="centerX" secondItem="kV7-7k-NzC" secondAttribute="centerX" id="72r-5q-Mc9"/>
-                                    <constraint firstItem="DmA-7b-FK8" firstAttribute="centerY" secondItem="kV7-7k-NzC" secondAttribute="centerY" constant="-46" id="AVC-v5-zI3"/>
-                                    <constraint firstItem="asW-Sf-NuA" firstAttribute="centerX" secondItem="kV7-7k-NzC" secondAttribute="centerX" id="pWw-Xf-gmg"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="top" secondItem="9H5-Zs-urz" secondAttribute="bottom" id="28e-LL-xZs"/>
                             <constraint firstAttribute="trailing" secondItem="G5D-cT-rcc" secondAttribute="trailing" id="5Ed-9n-X6J"/>
-                            <constraint firstAttribute="trailing" secondItem="kV7-7k-NzC" secondAttribute="trailing" id="Dfr-QN-HRE"/>
                             <constraint firstItem="gNx-M9-iQc" firstAttribute="top" secondItem="G5D-cT-rcc" secondAttribute="bottom" id="K09-3I-uQK"/>
-                            <constraint firstItem="gNx-M9-iQc" firstAttribute="top" secondItem="kV7-7k-NzC" secondAttribute="bottom" id="KfH-p5-N3w"/>
                             <constraint firstAttribute="trailing" secondItem="G5D-cT-rcc" secondAttribute="trailing" id="Spz-iJ-tOR"/>
-                            <constraint firstItem="kV7-7k-NzC" firstAttribute="leading" secondItem="f6Y-87-Nrh" secondAttribute="leading" id="VZK-Uu-Mtn"/>
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="leading" secondItem="f6Y-87-Nrh" secondAttribute="leading" id="hAS-Xm-u30"/>
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="leading" secondItem="f6Y-87-Nrh" secondAttribute="leading" id="kdD-xW-Pdd"/>
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="top" secondItem="f6Y-87-Nrh" secondAttribute="topMargin" id="stv-dg-Qjo"/>
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="top" secondItem="9H5-Zs-urz" secondAttribute="bottom" constant="-64" id="utd-by-4Uc"/>
-                            <constraint firstItem="kV7-7k-NzC" firstAttribute="top" secondItem="f6Y-87-Nrh" secondAttribute="top" constant="64" id="vSv-VE-ITQ"/>
                             <constraint firstItem="gNx-M9-iQc" firstAttribute="top" secondItem="G5D-cT-rcc" secondAttribute="bottom" id="y0t-ml-fzi"/>
-                            <constraint firstItem="kV7-7k-NzC" firstAttribute="top" secondItem="9H5-Zs-urz" secondAttribute="bottom" id="zcJ-I7-aWr"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="kV7-7k-NzC"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="28e-LL-xZs"/>
                                 <exclude reference="5Ed-9n-X6J"/>
                                 <exclude reference="kdD-xW-Pdd"/>
                                 <exclude reference="utd-by-4Uc"/>
-                                <exclude reference="vSv-VE-ITQ"/>
                                 <exclude reference="K09-3I-uQK"/>
                             </mask>
                         </variation>
@@ -380,7 +346,6 @@
                     <connections>
                         <outlet property="dateLabel" destination="EOu-8B-9Sc" id="aoY-vR-uTL"/>
                         <outlet property="distanceLabel" destination="dJb-Gl-449" id="RFu-Ce-YMP"/>
-                        <outlet property="notAvailable" destination="kV7-7k-NzC" id="hTJ-yS-VG0"/>
                         <outlet property="tableView" destination="G5D-cT-rcc" id="t6t-97-loe"/>
                         <outlet property="venueAddressLabel" destination="iVc-7N-PJ7" id="cFj-gd-s1g"/>
                         <outlet property="venueNameLabel" destination="r46-m9-k9r" id="E94-DC-cuF"/>
@@ -481,7 +446,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bread" width="140" height="138"/>
         <image name="calendar-circle" width="25" height="25"/>
         <image name="compass" width="24" height="24"/>
         <image name="info" width="24" height="24"/>

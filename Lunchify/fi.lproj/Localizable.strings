@@ -11,3 +11,5 @@ FINNISH = "Suomi";
 RELOAD = "Ladata";
 NO_VENUES_DESC = "Yritämme lisätä paikkoja pian.";
 NO_VENUES = "Ei arvot löytynyt";
+NO_MENU = "Voi...";
+NO_MENU_DESC = "Ehkä ravintola ei ole auki tänään.";

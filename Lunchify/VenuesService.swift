@@ -41,7 +41,7 @@ struct VenuesService {
             if let json = response {
                 menu = Menu(meals: json["meals"].arrayValue)
             } else {
-                print("Loading menu failed")
+                menu = Menu(meals: [])
             }
             
             completion(menu)

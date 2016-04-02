@@ -9,6 +9,7 @@
 import UIKit
 import JGProgressHUD
 import CoreLocation
+import DZNEmptyDataSet
 
 class MenuViewController: UIViewController {
 
@@ -22,9 +23,9 @@ class MenuViewController: UIViewController {
     
     var menu: Menu?
     let service = VenuesService()
+    var shouldEmptyStateBeShowed: Bool = false
     let HUD = JGProgressHUD(style: .Dark)
     
-    @IBOutlet weak var notAvailable: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var venueAddressLabel: UILabel!
@@ -38,15 +39,14 @@ class MenuViewController: UIViewController {
         // Delegates
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     func configureView() {
         tableView.separatorColor = UIColor(rgba: "#F0F0F0")
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        // Hide stuff
-        notAvailable.hidden = true
         
         // Progress
         HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
@@ -70,15 +70,10 @@ class MenuViewController: UIViewController {
                     
                     if let menu = retrievedMenu {
                         self.menu = menu
-                        self.tableView.reloadData()
-                        
                         if menu.isEmpty() {
-                            self.tableView.hidden = true
-                            self.notAvailable.hidden = false
+                            self.shouldEmptyStateBeShowed = true
                         }
-                    } else {
-                        self.tableView.hidden = true
-                        self.notAvailable.hidden = false
+                        self.tableView.reloadData()
                     }
                 }
             }
@@ -97,12 +92,12 @@ class MenuViewController: UIViewController {
     
 }
 
-extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+extension MenuViewController: UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if let menu = self.menu {
+        if let menu = self.menu where !menu.isEmpty() {
             return menu.getSetsCount()
         }
         
@@ -110,7 +105,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let menu = self.menu {
+        if let menu = self.menu where !menu.isEmpty() {
             return menu.getLanguageForIndex(section)
         }
         
@@ -118,7 +113,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let menu = self.menu {
+        if let menu = self.menu where !menu.isEmpty() {
             return menu.getMealsForIndex(section).count
         }
         
@@ -129,7 +124,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("MealCell", forIndexPath: indexPath) as! MenuTableViewCell
         
         // Configure the cell...
-        if let menu = self.menu {
+        if let menu = self.menu where !menu.isEmpty() {
             let meals = menu.getMealsForIndex(indexPath.section)
             let meal = meals[indexPath.row]
             let flags:[String] = meal["flags"].arrayValue.map { $0.string!.uppercaseString }
@@ -155,6 +150,36 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 35
+    }
+    
+    // MARK: - Empty View
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "no-menu")
+    }
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: NSLocalizedString("NO_MENU", comment: "No menu"))
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: NSLocalizedString("NO_MENU_DESC", comment: "Not open maybe"))
+    }
+    
+    func emptyDataSetWillAppear(scrollView: UIScrollView!) {
+        self.tableView.tableHeaderView?.hidden = true
+    }
+    
+    func emptyDataSetWillDisappear(scrollView: UIScrollView!) {
+        self.tableView.tableHeaderView?.hidden = false
+    }
+    
+    func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
+        return self.shouldEmptyStateBeShowed
+    }
+    
+    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.whiteColor()
     }
     
 }
