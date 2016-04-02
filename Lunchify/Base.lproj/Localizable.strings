@@ -8,3 +8,6 @@
 LOADING = "Loading...";
 ENGLISH = "English";
 FINNISH = "Finnish";
+RELOAD = "Reload";
+NO_VENUES_DESC = "We’re trying to add more venues soon.";
+NO_VENUES = "No Venues Found";

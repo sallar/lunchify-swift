@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		990237101CAFADC100BFF1AE /* HEXColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9902370F1CAFADC100BFF1AE /* HEXColor.framework */; };
+		990237121CB065EA00BFF1AE /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990237111CB065EA00BFF1AE /* DZNEmptyDataSet.framework */; };
 		990A7DD41C01C3B500BEBAA4 /* VenuesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD31C01C3B500BEBAA4 /* VenuesService.swift */; };
 		990A7DD61C01C46300BEBAA4 /* Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD51C01C46300BEBAA4 /* Venues.swift */; };
 		990A7DD81C01C73800BEBAA4 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD71C01C73800BEBAA4 /* Error.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		9902370F1CAFADC100BFF1AE /* HEXColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HEXColor.framework; path = Carthage/Build/iOS/HEXColor.framework; sourceTree = "<group>"; };
+		990237111CB065EA00BFF1AE /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		990A7DD31C01C3B500BEBAA4 /* VenuesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesService.swift; sourceTree = "<group>"; };
 		990A7DD51C01C46300BEBAA4 /* Venues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venues.swift; sourceTree = "<group>"; };
 		990A7DD71C01C73800BEBAA4 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				990237121CB065EA00BFF1AE /* DZNEmptyDataSet.framework in Frameworks */,
 				990237101CAFADC100BFF1AE /* HEXColor.framework in Frameworks */,
 				99DA1A1B1C0A68DA006CDD66 /* JGProgressHUD.framework in Frameworks */,
 				99827B071C012FEE001D10EF /* Alamofire.framework in Frameworks */,
@@ -126,6 +129,7 @@
 		99827AC11C012933001D10EF = {
 			isa = PBXGroup;
 			children = (
+				990237111CB065EA00BFF1AE /* DZNEmptyDataSet.framework */,
 				9902370F1CAFADC100BFF1AE /* HEXColor.framework */,
 				99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */,
 				99827B061C012FEE001D10EF /* Alamofire.framework */,
@@ -365,6 +369,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/JGProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/HEXColor.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
 			);
 			outputPaths = (
 			);

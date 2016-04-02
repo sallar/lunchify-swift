@@ -5,6 +5,9 @@
   Created by Sallar Kaboli on 4/1/16.
   Copyright © 2016 Sallar Kaboli. All rights reserved.
 */
-LOADING = "Ladataan...";
+LOADING = "Odota hetki...";
 ENGLISH = "Englanti";
 FINNISH = "Suomi";
+RELOAD = "Ladata";
+NO_VENUES_DESC = "Yritämme lisätä paikkoja pian.";
+NO_VENUES = "Ei arvot löytynyt";

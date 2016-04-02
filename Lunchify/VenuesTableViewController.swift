@@ -10,13 +10,19 @@ import UIKit
 import CoreLocation
 import JGProgressHUD
 import HEXColor
+import DZNEmptyDataSet
 
-class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate, UISearchResultsUpdating {
+class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate, UISearchResultsUpdating, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
+    var initialSearchPerformed: Bool = false
     var venues: [Venue] = []
     var filteredVenues: [Venue] = []
     var resultSearchController: UISearchController?
-    var location: CLLocation?
+    var location: CLLocation? {
+        didSet {
+            loadVenues()
+        }
+    }
     let locationManager = CLLocationManager()
     let HUD = JGProgressHUD(style: .Dark)
 
@@ -42,7 +48,6 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
         HUD.showInView(self.navigationController?.view)
         
-        
         // Remove 1px border
         self.navigationController?.navigationBar.subviews[0].subviews[1].hidden = true
         
@@ -59,6 +64,10 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
             self.tableView.tableHeaderView = controller.searchBar
             return controller
         })()
+        
+        // Empty State
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     // MARK: - Load Venues
@@ -72,11 +81,13 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
                 
                 // Go back to main process
                 dispatch_async(dispatch_get_main_queue()) {
+                    
                     self.venues = venues.allVenues
                     self.filteredVenues = self.venues
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                     self.HUD.dismiss()
+                    self.initialSearchPerformed = true
                 }
                 
             } else {
@@ -135,12 +146,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     // MARK: - Location
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if self.location == nil {
-            self.location = locations.first
-            self.loadVenues()
-        } else {
-            self.location = locations.first
-        }
+        self.location = locations.first
     }
     
     // MARK: - Search
@@ -154,5 +160,31 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
             tableView.reloadData()
         }
     }
-
+    
+    // MARK: - Empty View
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "no-venue")
+    }
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: NSLocalizedString("NO_VENUES", comment: "No venues"))
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: NSLocalizedString("NO_VENUES_DESC", comment: "Will add soon"))
+    }
+    
+    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+        return NSAttributedString(string: NSLocalizedString("RELOAD", comment: "Reload"))
+    }
+    
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        HUD.showInView(self.navigationController?.view)
+        loadVenues()
+    }
+    
+    func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
+        return self.initialSearchPerformed
+    }
 }
