@@ -42,6 +42,10 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
         HUD.showInView(self.navigationController?.view)
         
+        
+        // Remove 1px border
+        self.navigationController?.navigationBar.subviews[0].subviews[1].hidden = true
+        
         // Search bar
         definesPresentationContext = true
         self.resultSearchController = ({

@@ -90,7 +90,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lunchify" id="ceo-oX-gdQ">
-                        <barButtonItem key="leftBarButtonItem" image="info" id="09C-m5-NZS">
+                        <barButtonItem key="leftBarButtonItem" tag="10" image="info" id="09C-m5-NZS">
                             <connections>
                                 <segue destination="Y93-eU-fmI" kind="presentation" identifier="ShowAbout" modalPresentationStyle="overFullScreen" id="oLz-9n-w5m"/>
                             </connections>
