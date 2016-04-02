@@ -32,11 +32,7 @@ struct VenuesService {
     }
     
     func getMenu(venue: Venue, completion: (Menu? -> Void)) {
-        // Get Date
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        dateFormatter.timeZone = NSTimeZone.localTimeZone()
-        let date = dateFormatter.stringFromDate(NSDate())
+        let date = self.getMenuDate()
         let url = "\(apiBaseURL)venues/\(venue.id)/menu/\(date)"
         
         network.downloadJSONFromURL(url) { response in
@@ -50,6 +46,28 @@ struct VenuesService {
             
             completion(menu)
         }
+    }
+    
+    func getMenuDate() -> String {
+        // Get Date
+        var today = NSDate()
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let calendarComps = calendar.components(.Weekday, fromDate: today)
+        
+        // If its the weekend, go back to Friday
+        if calendarComps.weekday == 7 {
+            today = today.dateByAddingTimeInterval(-86400)
+        } else if calendarComps.weekday == 1 {
+            today = today.dateByAddingTimeInterval(-86400 * 2)
+        }
+        
+        // Formatter
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.timeZone = NSTimeZone.localTimeZone()
+        
+        // Return
+        return dateFormatter.stringFromDate(today)
     }
     
 }

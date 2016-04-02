@@ -13,7 +13,7 @@ class MenuViewController: UIViewController {
 
     var venue: Venue? {
         didSet {
-            configureView()
+            loadMenu()
         }
     }
     
@@ -26,10 +26,15 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureView()
         
         // Delegates
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func configureView() {
+        tableView.separatorColor = UIColor(rgba: "#F0F0F0")
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -41,8 +46,7 @@ class MenuViewController: UIViewController {
         HUD.showInView(self.navigationController?.view)
     }
     
-    func configureView() {
-        
+    func loadMenu() {
         if let venue = self.venue {
             self.title = venue.name
             
@@ -127,6 +131,17 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.grayColor()
+        header.textLabel?.font = UIFont.systemFontOfSize(16, weight: UIFontWeightLight)
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
     }
     
 }
