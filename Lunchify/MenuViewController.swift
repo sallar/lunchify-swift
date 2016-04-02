@@ -8,9 +8,11 @@
 
 import UIKit
 import JGProgressHUD
+import CoreLocation
 
 class MenuViewController: UIViewController {
 
+    var location: CLLocation?
     var venue: Venue? {
         didSet {
             loadMenu()
@@ -23,6 +25,9 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var notAvailable: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var venueNameLabel: UILabel!
+    @IBOutlet weak var venueAddressLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +49,17 @@ class MenuViewController: UIViewController {
         // Progress
         HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
         HUD.showInView(self.navigationController?.view)
+        
+        // Info
+        if let venue = self.venue, let location = self.location {
+            self.venueNameLabel?.text = venue.name
+            self.venueAddressLabel?.text = venue.address
+            self.distanceLabel?.text = venue.distanceFromLocation(location)
+        }
     }
     
     func loadMenu() {
         if let venue = self.venue {
-            self.title = venue.name
-            
             // Get venues
             service.getMenu(venue) { retrievedMenu in
                 dispatch_async(dispatch_get_main_queue()) {
@@ -137,11 +147,11 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor.whiteColor()
         header.textLabel?.textColor = UIColor.grayColor()
-        header.textLabel?.font = UIFont.systemFontOfSize(16, weight: UIFontWeightLight)
+        header.textLabel?.font = UIFont.systemFontOfSize(14, weight: UIFontWeightLight)
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
+        return 35
     }
     
 }

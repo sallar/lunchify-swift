@@ -42,15 +42,6 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
         HUD.showInView(self.navigationController?.view)
         
-        // Remove 1px border
-        for parent in self.navigationController!.navigationBar.subviews {
-            for childView in parent.subviews {
-                if childView is UIImageView {
-                    childView.removeFromSuperview()
-                }
-            }
-        }
-        
         // Search bar
         definesPresentationContext = true
         self.resultSearchController = ({
@@ -132,6 +123,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
                 let venue = filteredVenues[indexPath.row]
                 let controller = (segue.destinationViewController as! MenuViewController)
                 controller.venue = venue
+                controller.location = self.location
             }
         }
     }

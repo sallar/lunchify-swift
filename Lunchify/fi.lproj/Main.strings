@@ -2,9 +2,6 @@
 /* Class = "UIButton"; normalTitle = "Dismiss"; ObjectID = "05w-xh-UM3"; */
 "05w-xh-UM3.normalTitle" = "Sulje";
 
-/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "09C-m5-NZS"; */
-"09C-m5-NZS.title" = "Noin";
-
 /* Class = "UILabel"; text = "About"; ObjectID = "Cbc-pm-gps"; */
 "Cbc-pm-gps.text" = "Noin";
 
@@ -33,4 +30,4 @@
 "pJN-oK-n4h.text" = "Venue Address";
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "u5o-5x-jQd"; */
-"u5o-5x-jQd.title" = "Title";
+"u5o-5x-jQd.title" = "Lounas";
