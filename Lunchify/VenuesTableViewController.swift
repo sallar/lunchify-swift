@@ -21,7 +21,9 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     var resultSearchController: UISearchController?
     var location: CLLocation? {
         didSet {
-            loadVenues()
+            if oldValue == nil {
+                loadVenues()
+            }
         }
     }
     let locationManager = CLLocationManager()
@@ -83,10 +85,11 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
                 dispatch_async(dispatch_get_main_queue()) {
                     self.venues = venues.allVenues
                     self.filteredVenues = self.venues
+                    self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
+                    
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                     self.HUD.dismiss()
-                    self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
                 }
                 
             } else {
