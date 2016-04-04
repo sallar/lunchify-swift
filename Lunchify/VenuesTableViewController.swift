@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 import JGProgressHUD
-import HEXColor
+import UIColor_Hex_Swift
 import DZNEmptyDataSet
 
 class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate, UISearchResultsUpdating, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {

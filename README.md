@@ -14,7 +14,6 @@ Venue and meal data is provided by most of the corporate vendors (Amica, Sodexo,
 ``` bash
 $ git clone git@github.com:sallar/lunchify-swift.git
 $ cd lunchify-swift
-$ carthage update
 $ pod install
 ``` 
 Then open the `.xcworkspace` file in XCode and run in simulator or on your device.
