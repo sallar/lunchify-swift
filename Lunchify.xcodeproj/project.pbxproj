@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3814D5800A04B045CFE32101 /* libPods-Lunchify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DBC247A1E2398D8B95B3A6 /* libPods-Lunchify.a */; };
 		990237101CAFADC100BFF1AE /* HEXColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9902370F1CAFADC100BFF1AE /* HEXColor.framework */; };
 		990237121CB065EA00BFF1AE /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990237111CB065EA00BFF1AE /* DZNEmptyDataSet.framework */; };
 		990A7DD41C01C3B500BEBAA4 /* VenuesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A7DD31C01C3B500BEBAA4 /* VenuesService.swift */; };
@@ -31,7 +32,6 @@
 		99C16FBB1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
 		99C16FBC1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
 		99C16FBD1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
-		99C16FBF1CB2EA9B003B93AE /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C16FBE1CB2EA9B003B93AE /* GoogleAnalytics.framework */; };
 		99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */; };
 		99DA1A1B1C0A68DA006CDD66 /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */; };
 		99DA1A1D1C0A78CF006CDD66 /* espoo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */; };
@@ -56,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		237D2FE6785A73A605DFACA8 /* Pods-Lunchify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lunchify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lunchify/Pods-Lunchify.debug.xcconfig"; sourceTree = "<group>"; };
+		43DBC247A1E2398D8B95B3A6 /* libPods-Lunchify.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lunchify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB522EE90074CDD49B00A0D /* Pods-Lunchify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lunchify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lunchify/Pods-Lunchify.release.xcconfig"; sourceTree = "<group>"; };
 		9902370F1CAFADC100BFF1AE /* HEXColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HEXColor.framework; path = Carthage/Build/iOS/HEXColor.framework; sourceTree = "<group>"; };
 		990237111CB065EA00BFF1AE /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		990A7DD31C01C3B500BEBAA4 /* VenuesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesService.swift; sourceTree = "<group>"; };
@@ -86,8 +89,8 @@
 		99921CED1CAEDD78003134E4 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		99921CFE1CAEE0BD003134E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		99921D001CAEE0BF003134E4 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		99B686041CB2F54000C19795 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		99C16FBE1CB2EA9B003B93AE /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAnalytics.framework; path = Carthage/Build/iOS/GoogleAnalytics.framework; sourceTree = "<group>"; };
 		99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = espoo.gpx; path = ../espoo.gpx; sourceTree = "<group>"; };
@@ -102,12 +105,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99C16FBF1CB2EA9B003B93AE /* GoogleAnalytics.framework in Frameworks */,
 				990237121CB065EA00BFF1AE /* DZNEmptyDataSet.framework in Frameworks */,
 				990237101CAFADC100BFF1AE /* HEXColor.framework in Frameworks */,
 				99DA1A1B1C0A68DA006CDD66 /* JGProgressHUD.framework in Frameworks */,
 				99827B071C012FEE001D10EF /* Alamofire.framework in Frameworks */,
 				99827B021C012DC0001D10EF /* SwiftyJSON.framework in Frameworks */,
+				3814D5800A04B045CFE32101 /* libPods-Lunchify.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +142,7 @@
 		99827AC11C012933001D10EF = {
 			isa = PBXGroup;
 			children = (
-				99C16FBE1CB2EA9B003B93AE /* GoogleAnalytics.framework */,
+				99B686041CB2F54000C19795 /* BridgingHeader.h */,
 				99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */,
 				990237111CB065EA00BFF1AE /* DZNEmptyDataSet.framework */,
 				9902370F1CAFADC100BFF1AE /* HEXColor.framework */,
@@ -150,6 +153,8 @@
 				99827AE11C012933001D10EF /* LunchifyTests */,
 				99827AEC1C012933001D10EF /* LunchifyUITests */,
 				99827ACB1C012933001D10EF /* Products */,
+				ECCF6EC7A5B405883BE6D56B /* Pods */,
+				F24B12A5AF510170EDDCB9FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,6 +244,23 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		ECCF6EC7A5B405883BE6D56B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				237D2FE6785A73A605DFACA8 /* Pods-Lunchify.debug.xcconfig */,
+				7CB522EE90074CDD49B00A0D /* Pods-Lunchify.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F24B12A5AF510170EDDCB9FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43DBC247A1E2398D8B95B3A6 /* libPods-Lunchify.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,10 +268,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99827AF21C012933001D10EF /* Build configuration list for PBXNativeTarget "Lunchify" */;
 			buildPhases = (
+				412D41F18B30A49F34C56833 /* Check Pods Manifest.lock */,
 				99827AC61C012933001D10EF /* Sources */,
 				99827AC71C012933001D10EF /* Frameworks */,
 				99827AC81C012933001D10EF /* Resources */,
 				99827B031C012DD9001D10EF /* ShellScript */,
+				5F9CF089CD53EF99F870E8D8 /* Embed Pods Frameworks */,
+				91F7505E646885BC706D497B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -375,6 +400,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		412D41F18B30A49F34C56833 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5F9CF089CD53EF99F870E8D8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lunchify/Pods-Lunchify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91F7505E646885BC706D497B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lunchify/Pods-Lunchify-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		99827B031C012DD9001D10EF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,7 +456,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/JGProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/HEXColor.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/GoogleAnalytics.framework",
 			);
 			outputPaths = (
 			);
@@ -567,12 +636,13 @@
 		};
 		99827AF31C012933001D10EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 237D2FE6785A73A605DFACA8 /* Pods-Lunchify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -583,19 +653,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Lunchify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		99827AF41C012933001D10EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB522EE90074CDD49B00A0D /* Pods-Lunchify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -606,7 +677,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Lunchify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = BridgingHeader.h;
 			};
 			name = Release;
 		};

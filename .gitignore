@@ -2,3 +2,5 @@
 Carthage/
 Cartfile.*
 Lunchify.xcodeproj/xcuserdata/sallar.xcuserdatad/xcdebugger/
+Podfile.*
+Pods/

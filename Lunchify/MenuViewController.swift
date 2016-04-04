@@ -10,7 +10,6 @@ import UIKit
 import JGProgressHUD
 import CoreLocation
 import DZNEmptyDataSet
-import GoogleAnalytics
 
 class MenuViewController: UIViewController {
 

@@ -1,0 +1,17 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '8.0'
+# Uncomment this line if you're using Swift
+# use_frameworks!
+
+target 'Lunchify' do
+	pod 'Google/Analytics'
+end
+
+target 'LunchifyTests' do
+
+end
+
+target 'LunchifyUITests' do
+
+end
+

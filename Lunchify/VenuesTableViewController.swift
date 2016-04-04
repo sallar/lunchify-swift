@@ -11,7 +11,6 @@ import CoreLocation
 import JGProgressHUD
 import HEXColor
 import DZNEmptyDataSet
-import GoogleAnalytics
 
 class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate, UISearchResultsUpdating, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     

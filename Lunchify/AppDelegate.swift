@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import GoogleAnalytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
