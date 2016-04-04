@@ -10,6 +10,7 @@ import UIKit
 import JGProgressHUD
 import CoreLocation
 import DZNEmptyDataSet
+import GoogleAnalytics
 
 class MenuViewController: UIViewController {
 
@@ -41,6 +42,20 @@ class MenuViewController: UIViewController {
         tableView.dataSource = self
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        var name = "Unidentified Menu"
+        
+        if let venue = self.venue {
+            name = "Menu for: \(venue.name!)"
+        }
+        
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: name)
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
     
     func configureView() {
@@ -93,6 +108,9 @@ class MenuViewController: UIViewController {
         }
     }
     
+    @IBAction func goToNavigation(sender: AnyObject) {
+        performSegueWithIdentifier("ShowMap", sender: sender)
+    }
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {

@@ -11,6 +11,7 @@ import CoreLocation
 import JGProgressHUD
 import HEXColor
 import DZNEmptyDataSet
+import GoogleAnalytics
 
 class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate, UISearchResultsUpdating, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
@@ -38,6 +39,14 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         locationManager.distanceFilter = 500
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "Venues List")
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
 
     func configureView() {

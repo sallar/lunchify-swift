@@ -50,16 +50,7 @@ struct VenuesService {
     
     func getMenuDate(format: String = "YYYY-MM-dd") -> String {
         // Get Date
-        var today = NSDate()
-        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let calendarComps = calendar.components(.Weekday, fromDate: today)
-        
-        // If its the weekend, go back to Friday
-        if calendarComps.weekday == 7 {
-            today = today.dateByAddingTimeInterval(-86400)
-        } else if calendarComps.weekday == 1 {
-            today = today.dateByAddingTimeInterval(-86400 * 2)
-        }
+        let today = NSDate()
         
         // Formatter
         let dateFormatter = NSDateFormatter()

@@ -274,11 +274,15 @@
                                                 <constraint firstAttribute="width" constant="25" id="kba-qP-Wop"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-Gl-449">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-Gl-449">
                                             <rect key="frame" x="49" y="72" width="57" height="17"/>
+                                            <gestureRecognizers/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="boo-HE-wI5" appends="YES" id="JfI-Xe-FtW"/>
+                                            </connections>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhf-cm-MEV">
                                             <rect key="frame" x="0.0" y="108" width="600" height="1"/>
@@ -416,6 +420,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAr-ip-CLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="boo-HE-wI5">
+                    <connections>
+                        <action selector="goToNavigation:" destination="0oH-yw-71e" id="0il-Vx-tOR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1173" y="372"/>
         </scene>

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import GoogleAnalytics
 
 class MapViewController: UIViewController {
 
@@ -31,6 +32,20 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         mapView.showsUserLocation = true
         configureView()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        var name = "Unidentified Menu"
+        
+        if let venue = self.venue {
+            name = "Navigation for: \(venue.name!)"
+        }
+        
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: name)
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
     
     func configureView() {

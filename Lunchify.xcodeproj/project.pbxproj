@@ -28,6 +28,10 @@
 		99827B051C012EB8001D10EF /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827B041C012EB8001D10EF /* NetworkOperation.swift */; };
 		99827B071C012FEE001D10EF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99827B061C012FEE001D10EF /* Alamofire.framework */; };
 		99921CFD1CAEE0BD003134E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99921CFF1CAEE0BD003134E4 /* Localizable.strings */; };
+		99C16FBB1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
+		99C16FBC1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
+		99C16FBD1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
+		99C16FBF1CB2EA9B003B93AE /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C16FBE1CB2EA9B003B93AE /* GoogleAnalytics.framework */; };
 		99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */; };
 		99DA1A1B1C0A68DA006CDD66 /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */; };
 		99DA1A1D1C0A78CF006CDD66 /* espoo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */; };
@@ -82,6 +86,8 @@
 		99921CED1CAEDD78003134E4 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		99921CFE1CAEE0BD003134E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		99921D001CAEE0BF003134E4 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99C16FBE1CB2EA9B003B93AE /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAnalytics.framework; path = Carthage/Build/iOS/GoogleAnalytics.framework; sourceTree = "<group>"; };
 		99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = espoo.gpx; path = ../espoo.gpx; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C16FBF1CB2EA9B003B93AE /* GoogleAnalytics.framework in Frameworks */,
 				990237121CB065EA00BFF1AE /* DZNEmptyDataSet.framework in Frameworks */,
 				990237101CAFADC100BFF1AE /* HEXColor.framework in Frameworks */,
 				99DA1A1B1C0A68DA006CDD66 /* JGProgressHUD.framework in Frameworks */,
@@ -132,6 +139,8 @@
 		99827AC11C012933001D10EF = {
 			isa = PBXGroup;
 			children = (
+				99C16FBE1CB2EA9B003B93AE /* GoogleAnalytics.framework */,
+				99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */,
 				990237111CB065EA00BFF1AE /* DZNEmptyDataSet.framework */,
 				9902370F1CAFADC100BFF1AE /* HEXColor.framework */,
 				99DA1A1A1C0A68DA006CDD66 /* JGProgressHUD.framework */,
@@ -343,6 +352,7 @@
 				99827AD81C012933001D10EF /* LaunchScreen.storyboard in Resources */,
 				99827AD51C012933001D10EF /* Assets.xcassets in Resources */,
 				99827AD31C012933001D10EF /* Main.storyboard in Resources */,
+				99C16FBB1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C16FBC1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C16FBD1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +386,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/JGProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/HEXColor.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/GoogleAnalytics.framework",
 			);
 			outputPaths = (
 			);

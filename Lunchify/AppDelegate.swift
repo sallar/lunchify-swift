@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import GoogleAnalytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Location
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
+        
+        // GA
+        // Init GAI.
+        let Tracker = GAI.sharedInstance()
+        Tracker.trackerWithTrackingId("UA-75964103-1")
+        Tracker.trackUncaughtExceptions = true  // report uncaught exceptions
+        Tracker.logger.logLevel = GAILogLevel.Verbose
         
         return true
     }
