@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let Tracker = GAI.sharedInstance()
         Tracker.trackerWithTrackingId("UA-75964103-1")
         Tracker.trackUncaughtExceptions = true  // report uncaught exceptions
-        Tracker.logger.logLevel = GAILogLevel.Verbose
+        // Tracker.logger.logLevel = GAILogLevel.Verbose
         
         return true
     }
