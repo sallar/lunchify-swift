@@ -38,6 +38,14 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         locationManager.distanceFilter = 500
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        
+        // Check Status
+        if CLLocationManager.locationServicesEnabled() {
+            
+        } else {
+            print("Location services are not enabled")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -82,27 +90,34 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         tableView.emptyDataSetDelegate = self
     }
     
+    func endRefreshing() {
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+        self.HUD.dismiss()
+    }
+    
     // MARK: - Load Venues
     
     func loadVenues() {
         // Get venues
-        venuesService.getVenues(self.location!) { retrievedVenues in
-            if let venues = retrievedVenues {
-                
-                // Go back to main process
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.venues = venues.allVenues
-                    self.filteredVenues = self.venues
-                    self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
+        if let location = self.location {
+            venuesService.getVenues(location) { retrievedVenues in
+                if let venues = retrievedVenues {
                     
-                    self.tableView.reloadData()
-                    self.refreshControl?.endRefreshing()
-                    self.HUD.dismiss()
+                    // Go back to main process
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.venues = venues.allVenues
+                        self.filteredVenues = self.venues
+                        self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
+                        self.endRefreshing()
+                    }
+                    
+                } else {
+                    print("Fetch failed")
                 }
-                
-            } else {
-                print("Fetch failed")
             }
+        } else {
+            self.endRefreshing()
         }
     }
     
@@ -158,6 +173,13 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.location = locations.first
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .Restricted || status == .Denied {
+            self.shouldEmptyStateBeShowed = true
+            self.endRefreshing()
+        }
     }
     
     // MARK: - Search
