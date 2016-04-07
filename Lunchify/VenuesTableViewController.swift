@@ -35,7 +35,7 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         
         // Location
         locationManager.delegate = self
-        locationManager.distanceFilter = 500
+        locationManager.distanceFilter = 100
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
