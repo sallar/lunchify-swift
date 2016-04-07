@@ -5,11 +5,11 @@
   Created by Sallar Kaboli on 4/1/16.
   Copyright © 2016 Sallar Kaboli. All rights reserved.
 */
-LOADING = "Loading...";
-ENGLISH = "English";
-FINNISH = "Finnish";
-RELOAD = "Reload";
-NO_VENUES_DESC = "We’re trying to add more venues soon.";
-NO_VENUES = "No Venues Found";
-NO_MENU = "Oh No";
-NO_MENU_DESC = "Maybe the restaurant is not open today.";
+LOADING = "Vänta...";
+ENGLISH = "Engelska";
+FINNISH = "Finsk";
+RELOAD = "Ladda Om";
+NO_VENUES_DESC = "Vi försöker att lägga till fler platser snart.";
+NO_VENUES = "Inga värden hittades.";
+NO_MENU = "Å Nej";
+NO_MENU_DESC = "Kanske restaurangen inte är öppen i dag.";

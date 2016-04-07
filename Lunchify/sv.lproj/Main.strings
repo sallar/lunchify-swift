@@ -1,51 +1,18 @@
 
 /* Class = "UIButton"; normalTitle = "Dismiss"; ObjectID = "05w-xh-UM3"; */
-"05w-xh-UM3.normalTitle" = "Dismiss";
-
-/* Class = "UILabel"; text = "Flags"; ObjectID = "8km-QB-jUn"; */
-"8km-QB-jUn.text" = "Flags";
+"05w-xh-UM3.normalTitle" = "Stänga";
 
 /* Class = "UILabel"; text = "Illustrations by Swifticons."; ObjectID = "9Om-QJ-yBQ"; */
-"9Om-QJ-yBQ.text" = "Illustrations by Swifticons.";
-
-/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "DwH-WW-mgN"; */
-"DwH-WW-mgN.title" = "Item";
-
-/* Class = "UILabel"; text = "Date"; ObjectID = "EOu-8B-9Sc"; */
-"EOu-8B-9Sc.text" = "Date";
-
-/* Class = "UILabel"; text = "Meal Title"; ObjectID = "FGh-JZ-j6p"; */
-"FGh-JZ-j6p.text" = "Meal Title";
-
-/* Class = "UILabel"; text = "Venue Title"; ObjectID = "I3S-oP-SOh"; */
-"I3S-oP-SOh.text" = "Venue Title";
+"9Om-QJ-yBQ.text" = "Illustrationer av Swifticons.";
 
 /* Class = "UIViewController"; title = "Navigation"; ObjectID = "ICI-i4-unq"; */
-"ICI-i4-unq.title" = "Navigation";
+"ICI-i4-unq.title" = "Navigering";
 
 /* Class = "UILabel"; text = "Some icons designed by Freepik."; ObjectID = "Nm2-5n-y5v"; */
-"Nm2-5n-y5v.text" = "Some icons designed by Freepik.";
-
-/* Class = "UINavigationItem"; title = "Lunchify"; ObjectID = "ceo-oX-gdQ"; */
-"ceo-oX-gdQ.title" = "Lunchify";
-
-/* Class = "UILabel"; text = "Distance"; ObjectID = "dJb-Gl-449"; */
-"dJb-Gl-449.text" = "Distance";
-
-/* Class = "UILabel"; text = "Distance"; ObjectID = "hUt-x3-4aa"; */
-"hUt-x3-4aa.text" = "Distance";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "iVc-7N-PJ7"; */
-"iVc-7N-PJ7.text" = "Label";
-
-/* Class = "UILabel"; text = "Venue Address"; ObjectID = "pJN-oK-n4h"; */
-"pJN-oK-n4h.text" = "Venue Address";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "r46-m9-k9r"; */
-"r46-m9-k9r.text" = "Label";
+"Nm2-5n-y5v.text" = "Ikoner utformad av Freepik.";
 
 /* Class = "UINavigationItem"; title = "Lunch"; ObjectID = "u5o-5x-jQd"; */
 "u5o-5x-jQd.title" = "Lunch";
 
 /* Class = "UILabel"; text = "Created by Sallar Kaboli"; ObjectID = "uD4-9E-x4w"; */
-"uD4-9E-x4w.text" = "Created by Sallar Kaboli";
+"uD4-9E-x4w.text" = "Skapad av Sallar Kaboli";
