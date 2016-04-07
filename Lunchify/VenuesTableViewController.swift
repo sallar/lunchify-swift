@@ -38,14 +38,6 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         locationManager.distanceFilter = 500
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-        
-        // Check Status
-        if CLLocationManager.locationServicesEnabled() {
-            
-        } else {
-            print("Location services are not enabled")
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
