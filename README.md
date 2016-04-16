@@ -24,6 +24,11 @@ Then open the `.xcworkspace` file in XCode and run in simulator or on your devic
 - Some circular icons by [Freepik](http://www.freepik.com/)
 - Illustrations by [Swifticons](http://swifticons.com/)
 
+## Apple App Store
+Please don’t submit direct copies of this project to App Store as it’s already there.
+
+![https://itunes.apple.com/us/app/lunchify/id1099214692?ls=1&mt=8](https://lunchify.fi/static/badge.svg)
+
 ## License
 [MIT License](http://sallar.mit-license.org/)
 
