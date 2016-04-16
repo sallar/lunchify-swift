@@ -7,6 +7,11 @@ This swift app shows a list of venues to have lunch at in Finland. Having a lunc
 - Espoo (Keilaniemi, Leppävaara, ...)
 - _More locations will be added gradually_
 
+## Supported Languages
+- English
+- Suomi (Finnish)
+- Svenska (Swedish, Menus are **not** available in Swedish)
+
 ## Data
 Venue and meal data is provided by most of the corporate vendors (Amica, Sodexo, etc). In case there is no vendor, the data is scraped off the restaurants’ websites. Data is scraped using [Lunchify Scraper](https://github.com/sallar/lunchify-scraper) and hosted by [Lunchify API](https://github.com/sallar/lunchify-api) projects and both of them are open-sourced.
 
