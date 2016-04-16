@@ -20,7 +20,7 @@ Then open the `.xcworkspace` file in XCode and run in simulator or on your devic
 
 ## Acknowledgements
 - [Farzad Nazifi](https://github.com/euwars) for a great deal of help during development.
-- [Arash Asghari](https://twitter.com/_arashsghari) for heling with the graphic design
+- [Arash Asghari](https://twitter.com/_arashsghari) for helping with the graphic design
 - Some circular icons by [Freepik](http://www.freepik.com/)
 - Illustrations by [Swifticons](http://swifticons.com/)
 
