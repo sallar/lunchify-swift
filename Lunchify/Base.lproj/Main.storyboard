@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wix-3d-CNM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1Qc-im-KrP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -105,7 +105,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nr4-Xg-Nrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482" y="372"/>
+            <point key="canvasLocation" x="1294" y="372"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="ZT9-ts-NYw">
@@ -227,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJG-wM-B4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482" y="1090"/>
+            <point key="canvasLocation" x="898" y="1262"/>
         </scene>
         <!--Lunch-->
         <scene sceneID="5ON-Sk-d77">
@@ -392,7 +392,7 @@
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="leading" secondItem="f6Y-87-Nrh" secondAttribute="leading" id="kdD-xW-Pdd"/>
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="top" secondItem="f6Y-87-Nrh" secondAttribute="topMargin" id="stv-dg-Qjo"/>
                             <constraint firstItem="G5D-cT-rcc" firstAttribute="top" secondItem="9H5-Zs-urz" secondAttribute="bottom" constant="-64" id="utd-by-4Uc"/>
-                            <constraint firstItem="gNx-M9-iQc" firstAttribute="top" secondItem="G5D-cT-rcc" secondAttribute="bottom" id="y0t-ml-fzi"/>
+                            <constraint firstItem="gNx-M9-iQc" firstAttribute="top" secondItem="G5D-cT-rcc" secondAttribute="bottom" constant="-49" id="y0t-ml-fzi"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -426,7 +426,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1173" y="372"/>
+            <point key="canvasLocation" x="1985" y="372"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="WIp-4K-La1">
@@ -495,12 +495,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAE-AS-7ak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="372"/>
+            <point key="canvasLocation" x="2677" y="372"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Venues-->
         <scene sceneID="cmR-W3-3Ui">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wix-3d-CNM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Venues" id="tb1-2z-GkN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="back" backIndicatorTransitionMaskImage="back" id="jnR-eR-gGS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -514,6 +515,23 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVL-cd-GH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618" y="372"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="EVZ-xt-hZR">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1Qc-im-KrP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="pVX-v6-p2h">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wix-3d-CNM" kind="relationship" relationship="viewControllers" id="PLO-e3-4tA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8C6-uc-GbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-194" y="372"/>
         </scene>
