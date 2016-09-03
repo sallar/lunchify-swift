@@ -46,7 +46,11 @@ class VenueListViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func configureView() {
-        
+        // Navigation
+        let image = UIImage(named: "logo")
+        self.navigationItem.titleView = UIImageView(image: image)
+        self.navigationController?.navigationBar.subviews[0].subviews[1].hidden = true
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
     
     func endRefreshing() {

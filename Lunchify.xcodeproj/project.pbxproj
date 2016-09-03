@@ -26,6 +26,7 @@
 		99921CFD1CAEE0BD003134E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99921CFF1CAEE0BD003134E4 /* Localizable.strings */; };
 		99BB13B21D7B03DB006718C0 /* VenueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BB13B11D7B03DB006718C0 /* VenueListViewController.swift */; };
 		99BB13B41D7B0C80006718C0 /* VenuesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BB13B31D7B0C80006718C0 /* VenuesMapViewController.swift */; };
+		99BB13B81D7B7190006718C0 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BB13B71D7B7190006718C0 /* Annotation.swift */; };
 		99C16FBB1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
 		99C16FBC1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
 		99C16FBD1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
@@ -84,6 +85,7 @@
 		99B686041CB2F54000C19795 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		99BB13B11D7B03DB006718C0 /* VenueListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueListViewController.swift; sourceTree = "<group>"; };
 		99BB13B31D7B0C80006718C0 /* VenuesMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesMapViewController.swift; sourceTree = "<group>"; };
+		99BB13B71D7B7190006718C0 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = espoo.gpx; path = ../espoo.gpx; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				99827AD61C012933001D10EF /* LaunchScreen.storyboard */,
 				99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */,
 				99F769831CAC4FA600DB7AE9 /* MenuTableViewCell.swift */,
+				99BB13B71D7B7190006718C0 /* Annotation.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				990A7DDA1C01C9C600BEBAA4 /* Venue.swift in Sources */,
 				994D86A91C038DD1008C1106 /* MenuViewController.swift in Sources */,
 				990A7DD61C01C46300BEBAA4 /* Venues.swift in Sources */,
+				99BB13B81D7B7190006718C0 /* Annotation.swift in Sources */,
 				994D86AB1C03A129008C1106 /* Menu.swift in Sources */,
 				990D2A9A1C09075A00757968 /* AboutViewController.swift in Sources */,
 				99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */,

@@ -122,27 +122,39 @@
                     <view key="view" contentMode="scaleToFill" id="3Og-jv-h00">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="332" affinity="minY"/>
+                        </userGuides>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Frv-lM-27D">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Frv-lM-27D" firstAttribute="leading" secondItem="3Og-jv-h00" secondAttribute="leadingMargin" constant="-20" id="33d-iW-BRt"/>
+                            <constraint firstItem="Frv-lM-27D" firstAttribute="top" secondItem="PB5-d5-eDA" secondAttribute="bottom" constant="-64" id="KX3-f5-Qay"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Frv-lM-27D" secondAttribute="trailing" constant="-20" id="O62-qe-acH"/>
+                            <constraint firstItem="Frv-lM-27D" firstAttribute="top" secondItem="PB5-d5-eDA" secondAttribute="bottom" id="ScE-XK-0YB"/>
                             <constraint firstItem="Frv-lM-27D" firstAttribute="top" secondItem="PB5-d5-eDA" secondAttribute="bottom" id="UNN-XA-KVI"/>
                             <constraint firstItem="gJA-gX-ish" firstAttribute="top" secondItem="Frv-lM-27D" secondAttribute="bottom" constant="-49" id="jJA-aY-Sgp"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ScE-XK-0YB"/>
+                                <exclude reference="UNN-XA-KVI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="5mq-d3-IXj"/>
                     <connections>
                         <outlet property="mapView" destination="Frv-lM-27D" id="72J-WE-ZTZ"/>
+                        <segue destination="0oH-yw-71e" kind="show" identifier="ShowVenue" id="l2g-kB-t2C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7o-P8-QBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="1233"/>
+            <point key="canvasLocation" x="1214" y="1235"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="ZT9-ts-NYw">
@@ -563,6 +575,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="pVX-v6-p2h">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.76935011148452759" green="0.063184045255184174" blue="0.35298755764961243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="wix-3d-CNM" kind="relationship" relationship="viewControllers" id="PLO-e3-4tA"/>
@@ -579,9 +593,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LUj-vk-sXP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" id="u9Y-f3-569"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f2P-ML-P34">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="back" backIndicatorTransitionMaskImage="back" id="f2P-ML-P34">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.76935011148452759" green="0.063184045255184174" blue="0.35298755764961243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -601,4 +617,7 @@
         <image name="location-circle" width="25" height="25"/>
         <image name="slogan" width="509" height="133"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="l2g-kB-t2C"/>
+    </inferredMetricsTieBreakers>
 </document>

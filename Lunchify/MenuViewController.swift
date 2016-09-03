@@ -112,7 +112,11 @@ class MenuViewController: UIViewController {
     }
 }
 
-extension MenuViewController: UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+extension MenuViewController:
+    UITableViewDelegate,
+    UITableViewDataSource,
+    DZNEmptyDataSetSource,
+    DZNEmptyDataSetDelegate {
     
     // MARK: - Table view data source
     
