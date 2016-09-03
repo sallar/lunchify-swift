@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="1294" y="372"/>
         </scene>
-        <!--Venue Map View Controller-->
+        <!--Venues Map View Controller-->
         <scene sceneID="unH-zm-mAN">
             <objects>
-                <viewController id="Obn-dK-HV9" customClass="VenueMapViewController" customModule="Lunchify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Obn-dK-HV9" customClass="VenuesMapViewController" customModule="Lunchify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PB5-d5-eDA"/>
                         <viewControllerLayoutGuide type="bottom" id="gJA-gX-ish"/>
@@ -136,6 +136,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5mq-d3-IXj"/>
+                    <connections>
+                        <outlet property="mapView" destination="Frv-lM-27D" id="72J-WE-ZTZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7o-P8-QBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
