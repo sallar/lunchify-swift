@@ -12,43 +12,15 @@ import JGProgressHUD
 import UIColor_Hex_Swift
 import DZNEmptyDataSet
 
-class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate, UISearchResultsUpdating, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class VenuesTableViewController: VenueListViewController {
     
-    var shouldEmptyStateBeShowed: Bool = false
-    var venues: [Venue] = []
     var filteredVenues: [Venue] = []
-    let venuesService = VenuesService()
     var resultSearchController: UISearchController?
-    var location: CLLocation? {
-        didSet {
-            if oldValue == nil {
-                loadVenues()
-            }
-        }
-    }
-    let locationManager = CLLocationManager()
-    let HUD = JGProgressHUD(style: .Dark)
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configureView()
-        
-        // Location
-        locationManager.delegate = self
-        locationManager.distanceFilter = 100
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "Venues List")
-        
-        let builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
-    }
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var refreshControl: UIRefreshControl!
 
-    func configureView() {
+    override func configureView() {
         tableView.estimatedRowHeight = 64.0
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorColor = UIColor(rgba: "#F0F0F0")
@@ -82,69 +54,19 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         tableView.emptyDataSetDelegate = self
     }
     
-    func endRefreshing() {
-        self.tableView.reloadData()
-        self.refreshControl?.endRefreshing()
-        self.HUD.dismiss()
+    override func venuesDidLoad(venues: Venues) {
+        self.filteredVenues = self.venues
+        self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
     }
     
-    // MARK: - Load Venues
-    
-    func loadVenues() {
-        // Get venues
-        if let location = self.location {
-            venuesService.getVenues(location) { retrievedVenues in
-                if let venues = retrievedVenues {
-                    
-                    // Go back to main process
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.venues = venues.allVenues
-                        self.filteredVenues = self.venues
-                        self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
-                        self.endRefreshing()
-                    }
-                    
-                } else {
-                    print("Fetch failed")
-                }
-            }
-        } else {
-            self.endRefreshing()
-        }
+    override func endRefreshing() {
+        super.endRefreshing()
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
     
     @IBAction func refreshVenues(sender: UIRefreshControl) {
         loadVenues()
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredVenues.count
-    }
-
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as! VenueTableViewCell
-        let venue = self.filteredVenues[indexPath.row]
-
-        // Configure the cell...
-        cell.venueTitleLabel?.text = venue.name
-        cell.venueAddressLabel?.text = venue.address
-        
-        if let location = self.location {
-            cell.venueDistanceLabel?.text = venue.distanceFromLocation(location)
-        }
-        
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     // MARK: - Navigation
@@ -160,19 +82,9 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
             }
         }
     }
-    
-    // MARK: - Location
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.location = locations.first
-    }
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .Restricted || status == .Denied {
-            self.shouldEmptyStateBeShowed = true
-            self.endRefreshing()
-        }
-    }
+}
+
+extension VenuesTableViewController: UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchResultsUpdating {
     
     // MARK: - Search
     
@@ -184,6 +96,36 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
             
             tableView.reloadData()
         }
+    }
+    
+    // MARK: - Table view data source
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredVenues.count
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as! VenueTableViewCell
+        let venue = self.filteredVenues[indexPath.row]
+        
+        // Configure the cell...
+        cell.venueTitleLabel?.text = venue.name
+        cell.venueAddressLabel?.text = venue.address
+        
+        if let location = self.location {
+            cell.venueDistanceLabel?.text = venue.distanceFromLocation(location)
+        }
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     // MARK: - Empty View
@@ -212,4 +154,5 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
     func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
         return self.shouldEmptyStateBeShowed
     }
+    
 }
