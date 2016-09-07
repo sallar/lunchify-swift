@@ -32,6 +32,7 @@
 		99C16FBD1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
 		99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */; };
 		99DA1A1D1C0A78CF006CDD66 /* espoo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */; };
+		99EE027B1D807F700044F67E /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE027A1D807F700044F67E /* RootTabBarViewController.swift */; };
 		99F769841CAC4FA600DB7AE9 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F769831CAC4FA600DB7AE9 /* MenuTableViewCell.swift */; };
 		CEAEF1DAF87B9701BB18E37D /* Pods_Lunchify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5D507FCE067F3C6FD6F562 /* Pods_Lunchify.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = espoo.gpx; path = ../espoo.gpx; sourceTree = "<group>"; };
+		99EE027A1D807F700044F67E /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		99F769831CAC4FA600DB7AE9 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		99FEA4831CB1401D00065FD7 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
 		99FEA4841CB1401D00065FD7 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */,
 				99F769831CAC4FA600DB7AE9 /* MenuTableViewCell.swift */,
 				99BB13B71D7B7190006718C0 /* Annotation.swift */,
+				99EE027A1D807F700044F67E /* RootTabBarViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				99827B051C012EB8001D10EF /* NetworkOperation.swift in Sources */,
 				990A7DDA1C01C9C600BEBAA4 /* Venue.swift in Sources */,
 				994D86A91C038DD1008C1106 /* MenuViewController.swift in Sources */,
+				99EE027B1D807F700044F67E /* RootTabBarViewController.swift in Sources */,
 				990A7DD61C01C46300BEBAA4 /* Venues.swift in Sources */,
 				99BB13B81D7B7190006718C0 /* Annotation.swift in Sources */,
 				994D86AB1C03A129008C1106 /* Menu.swift in Sources */,
