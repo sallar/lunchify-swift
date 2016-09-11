@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1Qc-im-KrP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1Qc-im-KrP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -545,7 +545,7 @@
         <scene sceneID="cmR-W3-3Ui">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wix-3d-CNM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Venues" id="tb1-2z-GkN"/>
+                    <tabBarItem key="tabBarItem" title="Venues" image="book" id="tb1-2z-GkN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="back" backIndicatorTransitionMaskImage="back" id="jnR-eR-gGS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -588,7 +588,7 @@
         <scene sceneID="vHx-EX-nt8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LUj-vk-sXP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="u9Y-f3-569"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="location" id="u9Y-f3-569"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="back" backIndicatorTransitionMaskImage="back" id="f2P-ML-P34">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -608,9 +608,11 @@
     </scenes>
     <resources>
         <image name="back" width="24" height="24"/>
+        <image name="book" width="24" height="21"/>
         <image name="calendar-circle" width="25" height="25"/>
         <image name="compass" width="24" height="24"/>
         <image name="info" width="23" height="24"/>
+        <image name="location" width="18" height="24"/>
         <image name="location-circle" width="25" height="25"/>
         <image name="slogan" width="509" height="133"/>
     </resources>
