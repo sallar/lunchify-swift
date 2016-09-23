@@ -30,14 +30,14 @@ class VenuesMapViewController: VenueListViewController {
         super.configureView()
     }
     
-    override func venuesDidLoad(venues: Venues) {
+    override func venuesDidLoad(_ venues: Venues) {
         addAnnotations()
     }
     
     func addAnnotations() {
         if self.venues.count > 0 && !annotationsAdded && hasBeenCentered {
             annotationsAdded = true
-            for (index, venue) in self.venues.enumerate() {
+            for (index, venue) in self.venues.enumerated() {
                 let annotation = Annotation()
                 annotation.coordinate = venue.location!.coordinate
                 annotation.title = venue.name
@@ -50,10 +50,10 @@ class VenuesMapViewController: VenueListViewController {
 
     // MARK: - Navigation
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowVenue" {
             let venue = self.venues[(sender as! MKAnnotationView).tag]
-            let controller = (segue.destinationViewController as! MenuViewController)
+            let controller = (segue.destination as! MenuViewController)
             controller.venue = venue
             controller.location = self.location
             controller.date = venuesService.getMenuDate("EEEE")
@@ -63,7 +63,7 @@ class VenuesMapViewController: VenueListViewController {
 
 extension VenuesMapViewController: MKMapViewDelegate {
     
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         self.userLocation = userLocation
         
         if (!hasBeenCentered) {
@@ -74,11 +74,11 @@ extension VenuesMapViewController: MKMapViewDelegate {
         }
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKPointAnnotation {
-            let themeColor = UIColor(rgba: "#C2185B")
+            let themeColor = UIColor("#C2185B")
             
-            let detailButton = UIButton(type: .DetailDisclosure)
+            let detailButton = UIButton(type: .detailDisclosure)
             detailButton.tintColor = themeColor
             
             let pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "venuePin")
@@ -94,8 +94,8 @@ extension VenuesMapViewController: MKMapViewDelegate {
         return nil
     }
     
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        performSegueWithIdentifier("ShowVenue", sender: view)
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "ShowVenue", sender: view)
     }
     
 }

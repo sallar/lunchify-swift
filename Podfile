@@ -5,11 +5,11 @@ use_frameworks!
 
 target 'Lunchify' do
 	pod 'Google/Analytics'
-	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
-	pod 'Alamofire', '~> 3.3'
+	pod 'SwiftyJSON'
+	pod 'Alamofire'
 	pod 'JGProgressHUD'
 	pod 'DZNEmptyDataSet'
-	pod 'UIColor_Hex_Swift', '~> 2.1'
+	pod 'UIColor_Hex_Swift'
 end
 
 target 'LunchifyTests' do
@@ -20,3 +20,10 @@ target 'LunchifyUITests' do
 
 end
 
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+        end
+    end
+end

@@ -9,6 +9,6 @@
 import Foundation
 
 enum LunchifyError {
-    case Fatal
-    case Warning
+    case fatal
+    case warning
 }

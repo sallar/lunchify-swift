@@ -24,11 +24,11 @@ class VenuesTableViewController: VenueListViewController {
         super.configureView()
         tableView.estimatedRowHeight = 64.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.separatorColor = UIColor(rgba: "#F0F0F0")
+        tableView.separatorColor = UIColor("#F0F0F0")
         
         // Progress
-        HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
-        HUD.showInView(self.navigationController?.view)
+        HUD?.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
+        HUD?.show(in: self.navigationController?.view)
         
         // Search bar
         definesPresentationContext = true
@@ -36,8 +36,8 @@ class VenuesTableViewController: VenueListViewController {
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
             controller.dimsBackgroundDuringPresentation = false
-            controller.searchBar.searchBarStyle = .Minimal
-            controller.searchBar.tintColor = UIColor(rgba: "#C2185B")
+            controller.searchBar.searchBarStyle = .minimal
+            controller.searchBar.tintColor = UIColor("#C2185B")
             controller.searchBar.sizeToFit()
             
             self.tableView.tableHeaderView = controller.searchBar
@@ -49,7 +49,7 @@ class VenuesTableViewController: VenueListViewController {
         tableView.emptyDataSetDelegate = self
     }
     
-    override func venuesDidLoad(venues: Venues) {
+    override func venuesDidLoad(_ venues: Venues) {
         self.filteredVenues = self.venues
         self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
     }
@@ -60,17 +60,17 @@ class VenuesTableViewController: VenueListViewController {
         self.refreshControl?.endRefreshing()
     }
     
-    @IBAction func refreshVenues(sender: UIRefreshControl) {
+    @IBAction func refreshVenues(_ sender: UIRefreshControl) {
         loadVenues()
     }
 
     // MARK: - Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowVenue" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let venue = filteredVenues[indexPath.row]
-                let controller = (segue.destinationViewController as! MenuViewController)
+                let venue = filteredVenues[(indexPath as NSIndexPath).row]
+                let controller = (segue.destination as! MenuViewController)
                 controller.venue = venue
                 controller.location = self.location
                 controller.date = venuesService.getMenuDate("EEEE")
@@ -88,10 +88,10 @@ extension VenuesTableViewController:
     
     // MARK: - Search
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
             filteredVenues = searchText.isEmpty ? venues : venues.filter({(venue: Venue) -> Bool in
-                return venue.name!.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
+                return venue.name!.range(of: searchText, options: .caseInsensitive) != nil
             })
             
             tableView.reloadData()
@@ -100,18 +100,18 @@ extension VenuesTableViewController:
     
     // MARK: - Table view data source
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredVenues.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as! VenueTableViewCell
-        let venue = self.filteredVenues[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VenueCell", for: indexPath) as! VenueTableViewCell
+        let venue = self.filteredVenues[(indexPath as NSIndexPath).row]
         
         // Configure the cell...
         cell.venueTitleLabel?.text = venue.name
@@ -124,34 +124,34 @@ extension VenuesTableViewController:
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: - Empty View
     
-    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
         return UIImage(named: "no-venue")
     }
     
-    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         return NSAttributedString(string: NSLocalizedString("NO_VENUES", comment: "No venues"))
     }
     
-    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         return NSAttributedString(string: NSLocalizedString("NO_VENUES_DESC", comment: "Will add soon"))
     }
     
-    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
         return NSAttributedString(string: NSLocalizedString("RELOAD", comment: "Reload"))
     }
     
-    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
-        HUD.showInView(self.navigationController?.view)
+    func emptyDataSetDidTapButton(_ scrollView: UIScrollView!) {
+        HUD?.show(in: self.navigationController?.view)
         loadVenues()
     }
     
-    func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
         return self.shouldEmptyStateBeShowed
     }
     

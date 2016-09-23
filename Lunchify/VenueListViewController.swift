@@ -24,7 +24,7 @@ class VenueListViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     let locationManager = CLLocationManager()
-    let HUD = JGProgressHUD(style: .Dark)
+    let HUD = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,27 +37,27 @@ class VenueListViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "Venues List")
+        tracker?.set(kGAIScreenName, value: "Venues List")
         
-        let builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
+        let build = GAIDictionaryBuilder.createScreenView().build() as [NSObject : AnyObject]
+        tracker?.send(build)
     }
     
     func configureView() {
         // Navigation
         let image = UIImage(named: "logo")
         self.navigationItem.titleView = UIImageView(image: image)
-        self.navigationController?.navigationBar.subviews[0].subviews[1].hidden = true
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        //self.navigationController?.navigationBar.subviews[0].subviews[1].isHidden = true
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
     func endRefreshing() {
-        self.HUD.dismiss()
+        self.HUD?.dismiss()
     }
     
-    func venuesDidLoad(venues: Venues) {
+    func venuesDidLoad(_ venues: Venues) {
     }
     
     // MARK: - Load Venues
@@ -69,7 +69,7 @@ class VenueListViewController: UIViewController, CLLocationManagerDelegate {
                 if let venues = retrievedVenues {
                     
                     // Go back to main process
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         self.venues = venues.allVenues
                         self.venuesDidLoad(venues)
                         self.endRefreshing()
@@ -86,12 +86,12 @@ class VenueListViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - Location
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.location = locations.first
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .Restricted || status == .Denied {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .restricted || status == .denied {
             self.shouldEmptyStateBeShowed = true
             self.endRefreshing()
         }

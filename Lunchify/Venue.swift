@@ -39,16 +39,16 @@ struct Venue {
         }
         
         // Distance Config
-        distanceFormatter.units = .Metric
-        distanceFormatter.unitStyle = .Abbreviated
+        distanceFormatter.units = .metric
+        distanceFormatter.unitStyle = .abbreviated
     }
     
-    func distanceFromLocation(location: CLLocation) -> String? {
+    func distanceFromLocation(_ location: CLLocation) -> String? {
         var distanceString: String?
         
         if let venueLocation = self.location {
-            let distance = location.distanceFromLocation(venueLocation)
-            distanceString = distanceFormatter.stringFromDistance(distance)
+            let distance = location.distance(from: venueLocation)
+            distanceString = distanceFormatter.string(fromDistance: distance)
         }
         
         return distanceString
