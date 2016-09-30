@@ -19,8 +19,6 @@
 		99827AD31C012933001D10EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99827AD11C012933001D10EF /* Main.storyboard */; };
 		99827AD51C012933001D10EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99827AD41C012933001D10EF /* Assets.xcassets */; };
 		99827AD81C012933001D10EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99827AD61C012933001D10EF /* LaunchScreen.storyboard */; };
-		99827AE31C012933001D10EF /* LunchifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827AE21C012933001D10EF /* LunchifyTests.swift */; };
-		99827AEE1C012933001D10EF /* LunchifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827AED1C012933001D10EF /* LunchifyUITests.swift */; };
 		99827B001C012B1B001D10EF /* VenuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827AFF1C012B1B001D10EF /* VenuesTableViewController.swift */; };
 		99827B051C012EB8001D10EF /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99827B041C012EB8001D10EF /* NetworkOperation.swift */; };
 		99921CFD1CAEE0BD003134E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99921CFF1CAEE0BD003134E4 /* Localizable.strings */; };
@@ -28,31 +26,12 @@
 		99BB13B41D7B0C80006718C0 /* VenuesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BB13B31D7B0C80006718C0 /* VenuesMapViewController.swift */; };
 		99BB13B81D7B7190006718C0 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BB13B71D7B7190006718C0 /* Annotation.swift */; };
 		99C16FBB1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
-		99C16FBC1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
-		99C16FBD1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */; };
 		99CC9F141C025ED8009BD3EE /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC9F131C025ED8009BD3EE /* VenueTableViewCell.swift */; };
 		99DA1A1D1C0A78CF006CDD66 /* espoo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 99DA1A1C1C0A78CF006CDD66 /* espoo.gpx */; };
 		99EE027B1D807F700044F67E /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE027A1D807F700044F67E /* RootTabBarViewController.swift */; };
 		99F769841CAC4FA600DB7AE9 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F769831CAC4FA600DB7AE9 /* MenuTableViewCell.swift */; };
 		CEAEF1DAF87B9701BB18E37D /* Pods_Lunchify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5D507FCE067F3C6FD6F562 /* Pods_Lunchify.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		99827ADF1C012933001D10EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99827AC21C012933001D10EF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 99827AC91C012933001D10EF;
-			remoteInfo = Lunchify;
-		};
-		99827AEA1C012933001D10EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99827AC21C012933001D10EF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 99827AC91C012933001D10EF;
-			remoteInfo = Lunchify;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		237D2FE6785A73A605DFACA8 /* Pods-Lunchify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lunchify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lunchify/Pods-Lunchify.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,12 +50,6 @@
 		99827AD41C012933001D10EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99827AD71C012933001D10EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99827AD91C012933001D10EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99827ADE1C012933001D10EF /* LunchifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunchifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99827AE21C012933001D10EF /* LunchifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchifyTests.swift; sourceTree = "<group>"; };
-		99827AE41C012933001D10EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99827AE91C012933001D10EF /* LunchifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunchifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99827AED1C012933001D10EF /* LunchifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchifyUITests.swift; sourceTree = "<group>"; };
-		99827AEF1C012933001D10EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99827AFF1C012B1B001D10EF /* VenuesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewController.swift; sourceTree = "<group>"; };
 		99827B041C012EB8001D10EF /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		99921CEC1CAEDD78003134E4 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Main.strings; sourceTree = "<group>"; };
@@ -107,20 +80,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99827ADB1C012933001D10EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99827AE61C012933001D10EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -138,8 +97,6 @@
 				99B686041CB2F54000C19795 /* BridgingHeader.h */,
 				99C16FBA1CB2EA5B003B93AE /* GoogleService-Info.plist */,
 				99827ACC1C012933001D10EF /* Lunchify */,
-				99827AE11C012933001D10EF /* LunchifyTests */,
-				99827AEC1C012933001D10EF /* LunchifyUITests */,
 				99827ACB1C012933001D10EF /* Products */,
 				ECCF6EC7A5B405883BE6D56B /* Pods */,
 				F24B12A5AF510170EDDCB9FC /* Frameworks */,
@@ -150,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				99827ACA1C012933001D10EF /* Lunchify.app */,
-				99827ADE1C012933001D10EF /* LunchifyTests.xctest */,
-				99827AE91C012933001D10EF /* LunchifyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,24 +125,6 @@
 				99921CFF1CAEE0BD003134E4 /* Localizable.strings */,
 			);
 			path = Lunchify;
-			sourceTree = "<group>";
-		};
-		99827AE11C012933001D10EF /* LunchifyTests */ = {
-			isa = PBXGroup;
-			children = (
-				99827AE21C012933001D10EF /* LunchifyTests.swift */,
-				99827AE41C012933001D10EF /* Info.plist */,
-			);
-			path = LunchifyTests;
-			sourceTree = "<group>";
-		};
-		99827AEC1C012933001D10EF /* LunchifyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				99827AED1C012933001D10EF /* LunchifyUITests.swift */,
-				99827AEF1C012933001D10EF /* Info.plist */,
-			);
-			path = LunchifyUITests;
 			sourceTree = "<group>";
 		};
 		99827AFB1C012AB4001D10EF /* Views */ = {
@@ -277,42 +214,6 @@
 			productReference = 99827ACA1C012933001D10EF /* Lunchify.app */;
 			productType = "com.apple.product-type.application";
 		};
-		99827ADD1C012933001D10EF /* LunchifyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 99827AF51C012933001D10EF /* Build configuration list for PBXNativeTarget "LunchifyTests" */;
-			buildPhases = (
-				99827ADA1C012933001D10EF /* Sources */,
-				99827ADB1C012933001D10EF /* Frameworks */,
-				99827ADC1C012933001D10EF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				99827AE01C012933001D10EF /* PBXTargetDependency */,
-			);
-			name = LunchifyTests;
-			productName = LunchifyTests;
-			productReference = 99827ADE1C012933001D10EF /* LunchifyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		99827AE81C012933001D10EF /* LunchifyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 99827AF81C012933001D10EF /* Build configuration list for PBXNativeTarget "LunchifyUITests" */;
-			buildPhases = (
-				99827AE51C012933001D10EF /* Sources */,
-				99827AE61C012933001D10EF /* Frameworks */,
-				99827AE71C012933001D10EF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				99827AEB1C012933001D10EF /* PBXTargetDependency */,
-			);
-			name = LunchifyUITests;
-			productName = LunchifyUITests;
-			productReference = 99827AE91C012933001D10EF /* LunchifyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -327,16 +228,6 @@
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = T73DCRT9J5;
 						LastSwiftMigration = 0800;
-					};
-					99827ADD1C012933001D10EF = {
-						CreatedOnToolsVersion = 7.1.1;
-						LastSwiftMigration = 0800;
-						TestTargetID = 99827AC91C012933001D10EF;
-					};
-					99827AE81C012933001D10EF = {
-						CreatedOnToolsVersion = 7.1.1;
-						LastSwiftMigration = 0800;
-						TestTargetID = 99827AC91C012933001D10EF;
 					};
 				};
 			};
@@ -356,8 +247,6 @@
 			projectRoot = "";
 			targets = (
 				99827AC91C012933001D10EF /* Lunchify */,
-				99827ADD1C012933001D10EF /* LunchifyTests */,
-				99827AE81C012933001D10EF /* LunchifyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -373,22 +262,6 @@
 				99827AD51C012933001D10EF /* Assets.xcassets in Resources */,
 				99827AD31C012933001D10EF /* Main.storyboard in Resources */,
 				99C16FBB1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99827ADC1C012933001D10EF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99C16FBC1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99827AE71C012933001D10EF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99C16FBD1CB2EA5B003B93AE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,36 +353,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99827ADA1C012933001D10EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99827AE31C012933001D10EF /* LunchifyTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99827AE51C012933001D10EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99827AEE1C012933001D10EF /* LunchifyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		99827AE01C012933001D10EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 99827AC91C012933001D10EF /* Lunchify */;
-			targetProxy = 99827ADF1C012933001D10EF /* PBXContainerItemProxy */;
-		};
-		99827AEB1C012933001D10EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 99827AC91C012933001D10EF /* Lunchify */;
-			targetProxy = 99827AEA1C012933001D10EF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		99827AD11C012933001D10EF /* Main.storyboard */ = {
@@ -559,8 +403,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Salar Kaboli (S4S57TCD63)";
@@ -605,8 +451,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Salar Kaboli (T73DCRT9J5)";
@@ -676,60 +524,6 @@
 			};
 			name = Release;
 		};
-		99827AF61C012933001D10EF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = LunchifyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.sallar.LunchifyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lunchify.app/Lunchify";
-			};
-			name = Debug;
-		};
-		99827AF71C012933001D10EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = LunchifyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.sallar.LunchifyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lunchify.app/Lunchify";
-			};
-			name = Release;
-		};
-		99827AF91C012933001D10EF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LunchifyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.sallar.LunchifyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Lunchify;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		99827AFA1C012933001D10EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LunchifyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.sallar.LunchifyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Lunchify;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -747,24 +541,6 @@
 			buildConfigurations = (
 				99827AF31C012933001D10EF /* Debug */,
 				99827AF41C012933001D10EF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		99827AF51C012933001D10EF /* Build configuration list for PBXNativeTarget "LunchifyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				99827AF61C012933001D10EF /* Debug */,
-				99827AF71C012933001D10EF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		99827AF81C012933001D10EF /* Build configuration list for PBXNativeTarget "LunchifyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				99827AF91C012933001D10EF /* Debug */,
-				99827AFA1C012933001D10EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
