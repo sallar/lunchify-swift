@@ -15,7 +15,7 @@ struct VenuesService {
     
     let network: NetworkOperation = NetworkOperation()
     
-    func getVenues(location: CLLocation, completion: (Venues? -> Void)) {
+    func getVenues(_ location: CLLocation, completion: @escaping ((Venues?) -> Void)) {
         let lat: Double = location.coordinate.latitude // 60.176399230957
         let long: Double = location.coordinate.longitude // 24.8306999206543
         
@@ -32,7 +32,7 @@ struct VenuesService {
         }
     }
     
-    func getMenu(venue: Venue, completion: (Menu? -> Void)) {
+    func getMenu(_ venue: Venue, completion: @escaping ((Menu?) -> Void)) {
         let date = self.getMenuDate()
         let url = "\(apiBaseURL)venues/\(venue.id)/menu/\(date)"
         
@@ -49,17 +49,17 @@ struct VenuesService {
         }
     }
     
-    func getMenuDate(format: String = "YYYY-MM-dd") -> String {
+    func getMenuDate(_ format: String = "YYYY-MM-dd") -> String {
         // Get Date
-        let today = NSDate()
+        let today = Date()
         
         // Formatter
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-        dateFormatter.timeZone = NSTimeZone.localTimeZone()
+        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
         
         // Return
-        return dateFormatter.stringFromDate(today)
+        return dateFormatter.string(from: today)
     }
     
 }

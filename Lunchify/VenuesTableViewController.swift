@@ -12,56 +12,23 @@ import JGProgressHUD
 import UIColor_Hex_Swift
 import DZNEmptyDataSet
 
-class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate, UISearchResultsUpdating, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class VenuesTableViewController: VenueListViewController {
     
-    var shouldEmptyStateBeShowed: Bool = false
-    var venues: [Venue] = []
     var filteredVenues: [Venue] = []
-    let venuesService = VenuesService()
     var resultSearchController: UISearchController?
-    var location: CLLocation? {
-        didSet {
-            if oldValue == nil {
-                loadVenues()
-            }
-        }
-    }
-    let locationManager = CLLocationManager()
-    let HUD = JGProgressHUD(style: .Dark)
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configureView()
-        
-        // Location
-        locationManager.delegate = self
-        locationManager.distanceFilter = 100
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "Venues List")
-        
-        let builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
-    }
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var refreshControl: UIRefreshControl!
 
-    func configureView() {
+    override func configureView() {
+        super.configureView()
         tableView.estimatedRowHeight = 64.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.separatorColor = UIColor(rgba: "#F0F0F0")
+        tableView.separatorColor = UIColor("#F0F0F0")
         
         // Progress
-        HUD.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
-        HUD.showInView(self.navigationController?.view)
-        
-        // Navigation
-        let image = UIImage(named: "logo")
-        self.navigationItem.titleView = UIImageView(image: image)
-        self.navigationController?.navigationBar.subviews[0].subviews[1].hidden = true
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        HUD?.textLabel.text = NSLocalizedString("LOADING", comment: "Loading...")
+        HUD?.show(in: self.navigationController?.view)
         
         // Search bar
         definesPresentationContext = true
@@ -69,8 +36,8 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
             controller.dimsBackgroundDuringPresentation = false
-            controller.searchBar.searchBarStyle = .Minimal
-            controller.searchBar.tintColor = UIColor(rgba: "#C2185B")
+            controller.searchBar.searchBarStyle = .minimal
+            controller.searchBar.tintColor = UIColor("#C2185B")
             controller.searchBar.sizeToFit()
             
             self.tableView.tableHeaderView = controller.searchBar
@@ -82,56 +49,70 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         tableView.emptyDataSetDelegate = self
     }
     
-    func endRefreshing() {
+    override func venuesDidLoad(_ venues: Venues) {
+        self.filteredVenues = self.venues
+        self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
+    }
+    
+    override func endRefreshing() {
+        super.endRefreshing()
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
-        self.HUD.dismiss()
     }
     
-    // MARK: - Load Venues
-    
-    func loadVenues() {
-        // Get venues
-        if let location = self.location {
-            venuesService.getVenues(location) { retrievedVenues in
-                if let venues = retrievedVenues {
-                    
-                    // Go back to main process
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.venues = venues.allVenues
-                        self.filteredVenues = self.venues
-                        self.shouldEmptyStateBeShowed = (venues.allVenues.count == 0)
-                        self.endRefreshing()
-                    }
-                    
-                } else {
-                    print("Fetch failed")
-                }
-            }
-        } else {
-            self.endRefreshing()
-        }
-    }
-    
-    @IBAction func refreshVenues(sender: UIRefreshControl) {
+    @IBAction func refreshVenues(_ sender: UIRefreshControl) {
         loadVenues()
     }
 
-    // MARK: - Table view data source
+    // MARK: - Navigation
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowVenue" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let venue = filteredVenues[(indexPath as NSIndexPath).row]
+                let controller = (segue.destination as! MenuViewController)
+                controller.venue = venue
+                controller.location = self.location
+                controller.date = venuesService.getMenuDate("EEEE")
+            }
+        }
+    }
+}
+
+extension VenuesTableViewController:
+    UITableViewDelegate,
+    UITableViewDataSource,
+    DZNEmptyDataSetSource,
+    DZNEmptyDataSetDelegate,
+    UISearchResultsUpdating {
+    
+    // MARK: - Search
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filteredVenues = searchText.isEmpty ? venues : venues.filter({(venue: Venue) -> Bool in
+                return venue.name!.range(of: searchText, options: .caseInsensitive) != nil
+            })
+            
+            tableView.reloadData()
+        }
+    }
+    
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredVenues.count
     }
-
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as! VenueTableViewCell
-        let venue = self.filteredVenues[indexPath.row]
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VenueCell", for: indexPath) as! VenueTableViewCell
+        let venue = self.filteredVenues[(indexPath as NSIndexPath).row]
+        
         // Configure the cell...
         cell.venueTitleLabel?.text = venue.name
         cell.venueAddressLabel?.text = venue.address
@@ -143,73 +124,35 @@ class VenuesTableViewController: UITableViewController, CLLocationManagerDelegat
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-
-    // MARK: - Navigation
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowVenue" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let venue = filteredVenues[indexPath.row]
-                let controller = (segue.destinationViewController as! MenuViewController)
-                controller.venue = venue
-                controller.location = self.location
-                controller.date = venuesService.getMenuDate("EEEE")
-            }
-        }
-    }
-    
-    // MARK: - Location
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.location = locations.first
-    }
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .Restricted || status == .Denied {
-            self.shouldEmptyStateBeShowed = true
-            self.endRefreshing()
-        }
-    }
-    
-    // MARK: - Search
-    
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text {
-            filteredVenues = searchText.isEmpty ? venues : venues.filter({(venue: Venue) -> Bool in
-                return venue.name!.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
-            })
-            
-            tableView.reloadData()
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: - Empty View
     
-    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
         return UIImage(named: "no-venue")
     }
     
-    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         return NSAttributedString(string: NSLocalizedString("NO_VENUES", comment: "No venues"))
     }
     
-    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         return NSAttributedString(string: NSLocalizedString("NO_VENUES_DESC", comment: "Will add soon"))
     }
     
-    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
         return NSAttributedString(string: NSLocalizedString("RELOAD", comment: "Reload"))
     }
     
-    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
-        HUD.showInView(self.navigationController?.view)
+    func emptyDataSetDidTapButton(_ scrollView: UIScrollView!) {
+        HUD?.show(in: self.navigationController?.view)
         loadVenues()
     }
     
-    func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
         return self.shouldEmptyStateBeShowed
     }
+    
 }

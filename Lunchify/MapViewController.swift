@@ -33,7 +33,7 @@ class MapViewController: UIViewController {
         configureView()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         var name = "Unidentified Menu"
         
         if let venue = self.venue {
@@ -41,10 +41,10 @@ class MapViewController: UIViewController {
         }
         
         let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: name)
+        tracker?.set(kGAIScreenName, value: name)
         
-        let builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
+        let build = GAIDictionaryBuilder.createScreenView().build() as [NSObject : AnyObject]
+        tracker?.send(build)
     }
     
     func configureView() {
@@ -54,12 +54,12 @@ class MapViewController: UIViewController {
             toolbar.items?.append(bbi)
             
             // Set address
-            let labelFont = UIFont.systemFontOfSize(16.0, weight: UIFontWeightLight)
+            let labelFont = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightLight)
             let labelAttrDict: [String: AnyObject]? = [
-                NSForegroundColorAttributeName: UIColor.blackColor(),
+                NSForegroundColorAttributeName: UIColor.black,
                 NSFontAttributeName: labelFont
             ]
-            addressLabel.setTitleTextAttributes(labelAttrDict, forState: .Disabled)
+            addressLabel.setTitleTextAttributes(labelAttrDict, for: .disabled)
             addressLabel.title = venue.address
             
             // Zoom in to venue
@@ -82,13 +82,13 @@ class MapViewController: UIViewController {
             let placemark = MKPlacemark(coordinate: venue.location!.coordinate, addressDictionary: nil)
             let mapItem = MKMapItem(placemark: placemark)
             let request = MKDirectionsRequest()
-            request.source = MKMapItem.mapItemForCurrentLocation()
+            request.source = MKMapItem.forCurrentLocation()
             request.destination = mapItem
             request.requestsAlternateRoutes = false
             
             let directions = MKDirections(request: request)
             
-            directions.calculateDirectionsWithCompletionHandler { (response, error) -> Void in
+            directions.calculate { (response, error) -> Void in
                 if error != nil {
                     print("No navigation")
                 } else {
@@ -98,13 +98,13 @@ class MapViewController: UIViewController {
         }
     }
     
-    func showRoute(response: MKDirectionsResponse) {
+    func showRoute(_ response: MKDirectionsResponse) {
         for route in response.routes {
-            mapView.addOverlay(route.polyline, level: MKOverlayLevel.AboveRoads)
+            mapView.add(route.polyline, level: MKOverlayLevel.aboveRoads)
         }
     }
     
-    @IBAction func showVenue(sender: AnyObject) {
+    @IBAction func showVenue(_ sender: AnyObject) {
         if let venue = self.venue {
             let region = MKCoordinateRegionMakeWithDistance(venue.location!.coordinate, 1000, 1000)
             mapView.setRegion(region, animated: true)
@@ -114,7 +114,7 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         self.userLocation = userLocation
         
         if (followsUserLocation) {
@@ -122,9 +122,9 @@ extension MapViewController: MKMapViewDelegate {
         }
     }
     
-    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
-        polylineRenderer.strokeColor = UIColor.blueColor()
+        polylineRenderer.strokeColor = UIColor.blue
         polylineRenderer.lineWidth = 2
         return polylineRenderer
     }

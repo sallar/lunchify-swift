@@ -20,12 +20,12 @@ class AboutViewController: UIViewController {
     }
     
 
-    @IBAction func dismissView(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func dismissView(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
 
 }

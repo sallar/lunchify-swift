@@ -14,16 +14,16 @@ class NetworkOperation {
     
     typealias JSONDictionaryCompletion = (JSON?) -> Void
     
-    func downloadJSONFromURL(url: String, completion: JSONDictionaryCompletion) {
+    func downloadJSONFromURL(_ url: String, completion: @escaping JSONDictionaryCompletion) {
         // Do a get request
-        Alamofire.request(.GET, url).validate().responseJSON { response in
+        Alamofire.request(url).validate().responseJSON { response in
             switch response.result {
-            case .Success:
+            case .success:
                 if let value = response.result.value {
                     let json = JSON(value)
                     completion(json)
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
                 completion(nil)
             }
